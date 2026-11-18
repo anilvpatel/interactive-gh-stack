@@ -47,9 +47,9 @@
       <button type="button" class="btn" data-nav="trunk">↙ trunk</button><button type="button" class="btn" data-nav="bottom">⇣ bottom</button><button type="button" class="btn" data-nav="down">↓ down</button><button type="button" class="btn primary" data-nav="up">↑ up</button><button type="button" class="btn" data-nav="top">⇡ top</button>
     </div>
     <hr style="border:0;border-top:1px solid var(--border);margin:16px 0">
-    <p class="explain"><strong>Try a cascading rebase.</strong> Add a commit to the bottom branch. The simulator checks out that branch, then <code>gh stack rebase --upstack</code> replays it and every layer above it on the updated parent history.</p>
+    <p class="explain"><strong>Try a cascading rebase.</strong> Add a commit to the bottom branch. The simulator checks out that branch, then <code>gh stack rebase --upstack</code> replays the branches above it onto its new tip.</p>
     <div class="actions"><button type="button" class="btn" id="add-commit" disabled>＋ Add commit to bottom</button><button type="button" class="btn primary" id="rebase" disabled>↻ Run gh stack rebase --upstack</button></div>
-    <div id="rebase-note" class="callout warn" style="display:none">The bottom layer has changed. Run a rebase from this branch up through the top of the stack.</div>
+    <div id="rebase-note" class="callout warn" style="display:none">A branch no longer starts at its parent's tip. Run a rebase from the changed branch up through the top of the stack.</div>
   </section>
 
   <section class="card lesson tabcontent" id="tab-merge">
@@ -144,7 +144,7 @@
   }
   function makeBranch(name, index) {
     const lower = name.toLowerCase();
-    const preset = lower.includes('auth') ? presets.auth : lower.includes('api') ? presets.api : (lower.includes('ui') || lower.includes('front')) ? presets.ui : {title:'Feature implementation',files:2,commits:1,detail:'Feature-specific changes'};
+    const preset = lower.includes('auth') ? presets.auth : lower.includes('api') ? presets.api : (/\bui\b/.test(lower) || lower.includes('front')) ? presets.ui : {title:'Feature implementation',files:2,msgs:['Implement feature'],detail:'Feature-specific changes'};
     const previousActive = activeBranches().at(-1);
     const originalBase = index === 0 ? 'main' : (previousActive ? previousActive.name : 'main');
     const baseSha = (previousActive ? previousActive.commits : state.main).at(-1).sha;
@@ -425,7 +425,7 @@
     ['gh stack view --short','View the current stack in compact output.'],
     ['gh stack up','Move one layer away from the trunk.'],
     ['gh stack down','Move one layer toward the trunk.'],
-    ['gh stack rebase --upstack','Rebase the current branch and every layer above it.'],
+    ['gh stack rebase --upstack','Replay the branches above the current one onto its new tip.'],
     ['gh stack sync','Fetch, reconcile, rebase, push, and sync PR state.'],
     ['gh stack merge 2','Merge PR #2 and every unmerged PR below it.'],
     ['gh stack checkout feature-api','Check out a branch in the stack.']
