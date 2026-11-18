@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gh stack — Interactive Learning Lab</title>
+<style>
+:root{color-scheme:light;--bg:#f6f8fa;--surface:#fff;--surface2:#f6f8fa;--text:#1f2328;--muted:#656d76;--border:#d1d9e0;--blue:#0969da;--bluebg:#ddf4ff;--green:#1a7f37;--greenbg:#dafbe1;--purple:#8250df;--amber:#9a6700;--amberbg:#fff8c5;--red:#cf222e;--shadow:0 1px 2px #1f23280d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.shell{max-width:1160px;margin:0 auto;padding:28px 20px 52px}.eyebrow{display:flex;gap:8px;align-items:center;font-size:11px;font-weight:750;letter-spacing:.12em;color:var(--muted)}.green-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}h1{font-size:30px;line-height:1.15;letter-spacing:-.04em;margin:10px 0 7px}.intro{color:var(--muted);max-width:760px;margin:0 0 22px}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 14px}.tab{border:1px solid var(--border);border-radius:9px;background:var(--surface);padding:9px 13px;font-weight:650;font-size:12px;color:var(--text)}.tab.active{border-color:var(--blue);background:var(--bluebg);color:#0550ae}.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;box-shadow:var(--shadow);min-width:0}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.cardhead h2,.card h2{font-size:14px;margin:0;font-weight:750}.muted{color:var(--muted)}.tiny{font-size:11px}.lesson{margin-bottom:14px}.lesson-desc{color:var(--muted);margin:5px 0 14px}.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.step{border:1px solid var(--border);border-radius:9px;padding:10px;text-align:left;background:var(--surface);min-width:0}.step.active{border-color:var(--blue);background:#f0f6ff}.step .number{font-size:10px;color:var(--muted)}.step b{display:block;font-size:12px;margin:4px 0}.step small{display:block;color:var(--muted);font-size:10px;line-height:1.35}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:8px 11px;font-weight:650;font-size:12px;color:var(--text)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.success{color:var(--green);border-color:#82c99a}.btn:hover:not(:disabled),.tab:hover{filter:brightness(.97)}.grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(310px,.9fr);gap:14px;margin-top:14px}.branch-graph{display:flex;flex-direction:column;align-items:stretch;padding:12px 6px 4px}.branch{width:100%;border:1px solid var(--border);border-radius:9px;padding:10px 12px;background:#fff;text-align:left;margin:0;color:var(--text)}.branch.selected{border:2px solid var(--blue);padding:9px 11px;box-shadow:0 0 0 2px #ddf4ff}.branch.merged{background:#f0fff4;border-color:#82c99a;cursor:default}.branch.trunk{border-style:dashed;background:var(--surface2);cursor:default}.branchtop{display:flex;align-items:center;justify-content:space-between;gap:8px}.branchname{font-weight:750;font-size:12px;overflow-wrap:anywhere}.branchmeta{font-size:10px;color:var(--muted);margin-top:4px}.branchdot{display:inline-block;width:8px;height:8px;border-radius:3px;margin-right:7px}.connector{height:27px;display:flex;align-items:center;justify-content:center;color:#8c959f;position:relative}.connector:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--border)}.connector span{position:relative;background:var(--surface);padding:0 7px}.stackinfo{padding:9px;border-radius:8px;background:var(--surface2);font-size:11px;margin-top:10px}.explain{font-size:12px;line-height:1.65}.explain strong{font-weight:750}.callout{padding:10px;border-radius:8px;font-size:11px;margin-top:9px}.callout.warn{background:var(--amberbg);border:1px solid #d4a72c}.callout.ok{background:var(--greenbg);border:1px solid #82c99a}.terminal{background:#0d1117;border:1px solid #30363d;border-radius:10px;padding:13px;color:#e6edf3;min-height:218px;display:flex;flex-direction:column}.termhead{font-size:10px;color:#8b949e;display:flex;justify-content:space-between;margin-bottom:10px}.log{font:11px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-y:auto;max-height:180px;display:flex;flex-direction:column;gap:7px;white-space:pre-wrap;overflow-wrap:anywhere}.log .cmd{color:#79c0ff}.log .out{color:#c9d1d9}.cmdrow{display:flex;gap:7px;margin-top:auto;padding-top:10px}.cmdrow input{min-width:0;flex:1;background:#161b22;border:1px solid #30363d;color:#e6edf3;border-radius:7px;padding:9px;font:11px ui-monospace,monospace}.cmdrow button{background:#238636;color:white;border:0;border-radius:7px;padding:8px 12px;font-size:11px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}.stat{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:10px}.stat b{display:block;font-size:18px}.stat span{font-size:10px;color:var(--muted)}.commandlist{display:grid;grid-template-columns:1fr 1fr;gap:8px}.command{border:1px solid var(--border);border-radius:9px;padding:10px;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.command code{font-size:11px;overflow-wrap:anywhere}.command p{margin:4px 0 0;font-size:10px;color:var(--muted)}.try{padding:5px 8px;font-size:10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);white-space:nowrap}.tabcontent{display:none}.tabcontent.active{display:block}.navactions{display:flex;gap:7px;flex-wrap:wrap}.select{border:1px solid var(--border);border-radius:7px;padding:9px;background:#fff;min-width:240px;max-width:100%}.footer{font-size:10px;color:var(--muted);margin-top:16px;line-height:1.6}.footer a{color:var(--blue)}code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 4px;font-size:.92em}.hint{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5}.status{border:1px solid var(--border);border-radius:99px;padding:3px 8px;font-size:10px;font-weight:700;white-space:nowrap}.lower-note{font-size:11px;color:var(--muted);line-height:1.6;margin-top:8px}
+@media(max-width:760px){.shell{padding:20px 12px 40px}h1{font-size:25px}.grid{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.commandlist{grid-template-columns:1fr}.card{padding:13px}.select{min-width:0;flex:1}}
+</style>
+</head>
+<body>
+<div class="shell" id="app">
+  <div class="eyebrow"><span class="green-dot"></span> GIT WORKFLOW PLAYGROUND <span>/</span> GH STACK</div>
+  <h1>Learn stacked pull requests by doing.</h1>
+  <p class="intro">Build a stack, navigate between dependent branches, rebase lower layers, and merge a stack. The graph and simulated terminal update as you experiment. No GitHub account or repository access is needed.</p>
+
+  <nav class="tabs" aria-label="Learning sections">
+    <button type="button" class="tab active" data-tab="build" aria-selected="true">01 · Build</button>
+    <button type="button" class="tab" data-tab="navigate" aria-selected="false">02 · Navigate & rebase</button>
+    <button type="button" class="tab" data-tab="merge" aria-selected="false">03 · Merge</button>
+    <button type="button" class="tab" data-tab="commands" aria-selected="false">04 · Commands</button>
+  </nav>
+
+  <section class="card lesson tabcontent active" id="tab-build">
+    <div class="cardhead"><div><h2>Build your first stack</h2><div class="tiny muted">Create a chain of dependent branches one layer at a time.</div></div><button type="button" class="btn" data-action="reset">↺ Reset playground</button></div>
+    <div class="steps" id="steps">
+      <button type="button" class="step active" data-step="0"><span class="number">STEP 01</span><b>Initialize</b><small>Create the first branch on main</small></button>
+      <button type="button" class="step" data-step="1"><span class="number">STEP 02</span><b>Add API</b><small>Create a branch on auth</small></button>
+      <button type="button" class="step" data-step="2"><span class="number">STEP 03</span><b>Add frontend</b><small>Create a branch on API</small></button>
+      <button type="button" class="step" data-step="3"><span class="number">STEP 04</span><b>Submit stack</b><small>Push branches and create PRs</small></button>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn primary" id="init">▶ Run gh stack init</button>
+      <button type="button" class="btn" id="add-api" disabled>Add API layer</button>
+      <button type="button" class="btn" id="add-ui" disabled>Add frontend layer</button>
+      <button type="button" class="btn success" id="submit" disabled>Submit stack</button>
+    </div>
+    <div class="hint">You can also type commands in the terminal. Try <code>gh stack init feature-auth feature-api feature-ui</code> to create three layers in one step.</div>
+  </section>
+
+  <section class="card lesson tabcontent" id="tab-navigate">
+    <div class="cardhead"><div><h2>Navigate & rebase</h2><div class="tiny muted">Navigation changes HEAD; rebasing updates branch ancestry.</div></div></div>
+    <p class="explain"><strong>Move through the stack.</strong> <code>up</code> moves away from trunk toward the top; <code>down</code> moves toward trunk.</p>
+    <div class="navactions">
+      <button type="button" class="btn" data-nav="trunk">↙ trunk</button><button type="button" class="btn" data-nav="bottom">⇣ bottom</button><button type="button" class="btn" data-nav="down">↓ down</button><button type="button" class="btn primary" data-nav="up">↑ up</button><button type="button" class="btn" data-nav="top">⇡ top</button>
+    </div>
+    <hr style="border:0;border-top:1px solid var(--border);margin:16px 0">
+    <p class="explain"><strong>Try a cascading rebase.</strong> Add a commit to the bottom branch. The simulator checks out that branch, then <code>gh stack rebase --upstack</code> replays it and every layer above it on the updated parent history.</p>
+    <div class="actions"><button type="button" class="btn" id="add-commit" disabled>＋ Add commit to bottom</button><button type="button" class="btn primary" id="rebase" disabled>↻ Run gh stack rebase --upstack</button></div>
+    <div id="rebase-note" class="callout warn" style="display:none">The bottom layer has changed. Run a rebase from this branch up through the top of the stack.</div>
+  </section>
+
+  <section class="card lesson tabcontent" id="tab-merge">
+    <div class="cardhead"><div><h2>Merge a stack</h2><div class="tiny muted">Choose a PR; its unmerged dependencies below it are included.</div></div></div>
+    <p class="explain">Merging through PR #2 merges PR #1 and PR #2 together. PRs above #2 remain open. In the real CLI, the selected merge set is handled as one operation; GitHub's merge requirements and merge queue still apply.</p>
+    <div class="actions"><select class="select" id="merge-select" aria-label="Select a pull request" disabled><option value="">Submit the stack first</option></select><button type="button" class="btn primary" id="merge" disabled>Merge selected stack layers</button></div>
+    <div class="hint">This tab demonstrates merge scope. It does not call GitHub or merge a real pull request.</div>
+  </section>
+
+  <section class="card lesson tabcontent" id="tab-commands">
+    <div class="cardhead"><div><h2>Command reference</h2><div class="tiny muted">Select Try to load a command into the simulated terminal.</div></div></div>
+    <div class="commandlist" id="command-list"></div>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <div class="cardhead"><div><h2>Branch stack</h2><div class="tiny muted">Top of stack ↓ toward trunk</div></div><span class="status" id="stack-status">NO ACTIVE STACK</span></div>
+      <div class="branch-graph" id="graph" aria-live="polite"></div>
+      <div class="stackinfo" id="head">HEAD → <strong>main</strong> · trunk</div>
+      <p class="tiny muted" id="graph-hint">Run <code>gh stack init feature-auth</code> to create the first branch.</p>
+    </section>
+    <section class="card">
+      <div class="cardhead"><div><h2>What changed?</h2><div class="tiny muted" id="op-count">0 operations</div></div></div>
+      <div class="explain" id="explanation">Start with <strong>main</strong>. Initialize the stack with <code>gh stack init feature-auth</code>. This creates the bottom branch on top of trunk.</div>
+      <div class="callout" id="context" style="display:none"></div>
+      <div class="terminal" style="margin-top:13px">
+        <div class="termhead"><span>TERMINAL · SIMULATED</span><span>● ● ●</span></div>
+        <div class="log" id="log" aria-live="polite"><div class="out">Welcome. Try: gh stack init feature-auth</div></div>
+        <form class="cmdrow" id="cmd-form"><input id="cmd-input" autocomplete="off" spellcheck="false" placeholder="gh stack add feature-api" aria-label="Enter a simulated gh stack command"><button type="submit">Run ↵</button></form>
+      </div>
+      <div class="tiny muted" style="margin-top:7px">Commands are simulated locally in this page; they do not access your repository.</div>
+    </section>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b id="stat-branches">0</b><span>Active branches</span></div>
+    <div class="stat"><b id="stat-prs">0</b><span>Open pull requests</span></div>
+    <div class="stat"><b id="stat-merged">0</b><span>Merged pull requests</span></div>
+  </div>
+  <p class="footer">Based on GitHub's <a href="https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-stacked-pull-requests" target="_blank" rel="noopener">stacked PR guide</a> and the <a href="https://github.com/github/gh-stack" target="_blank" rel="noopener">official gh-stack extension</a>. This is a learning simulation, not an actual Git implementation. Branches in a stack build on the branch immediately below them; each PR targets its dependency below.</p>
+</div>
+<script>
+(() => {
+  'use strict';
+  const app = document.getElementById('app');
+  if (!app) return;
+  const $ = id => document.getElementById(id);
+  const colors = ['#0969da','#1a7f37','#8250df','#bf8700','#cf222e','#0f766e'];
+  const presets = {
+    auth: {title:'Authentication middleware',files:4,commits:2,detail:'Auth middleware + session validation'},
+    api: {title:'Protected API endpoints',files:3,commits:2,detail:'API handlers + authorization checks'},
+    ui: {title:'Frontend integration',files:5,commits:3,detail:'Login screen + API integration'}
+  };
+  const state = {
+    branches: [], head:'main', nextPr:1, merged:[], logs:[], operations:0,
+    dirty:false, activeTab:'build', selectedStep:0
+  };
+  const escapeHtml = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const activeBranches = () => state.branches.filter(branch => !branch.merged);
+  const branchIndex = name => state.branches.findIndex(branch => branch.name === name);
+  const currentIndex = () => activeBranches().findIndex(branch => branch.name === state.head);
+  const topBranch = () => activeBranches().at(-1) || null;
+  const baseFor = branch => branch.baseBranch || branch.originalBase || 'main';
+  function addLog(command, output) {
+    state.logs.push({command,output});
+    if (state.logs.length > 24) state.logs.shift();
+    state.operations++;
+  }
+  function explain(html, tone='', contextText='') {
+    $('explanation').innerHTML = html;
+    const context = $('context');
+    context.style.display = contextText ? 'block' : 'none';
+    context.className = 'callout ' + (tone === 'ok' ? 'ok' : 'warn');
+    context.textContent = contextText;
+  }
+  function makeBranch(name, index) {
+    const lower = name.toLowerCase();
+    const preset = lower.includes('auth') ? presets.auth : lower.includes('api') ? presets.api : (lower.includes('ui') || lower.includes('front')) ? presets.ui : {title:'Feature implementation',files:2,commits:1,detail:'Feature-specific changes'};
+    const previousActive = activeBranches().at(-1);
+    const originalBase = index === 0 ? 'main' : (previousActive ? previousActive.name : 'main');
+    return {...preset,name,pr:null,merged:false,rebaseCount:0,originalBase,baseBranch:originalBase,color:colors[index % colors.length]};
+  }
+  function initStack(names) {
+    if (state.branches.length) {
+      addLog('gh stack init ' + names.join(' '), 'A stack already exists in this playground. Reset first to start a new stack.');
+      render(); return;
+    }
+    const branchNames = names.length ? names : ['feature-auth'];
+    const unique = new Set();
+    for (const name of branchNames) {
+      if (name === 'main' || unique.has(name)) {
+        addLog('gh stack init ' + branchNames.join(' '), 'Branch names must be unique and cannot be main.');
+        render(); return;
+      }
+      unique.add(name);
+    }
+    branchNames.forEach((name,index) => state.branches.push(makeBranch(name,index)));
+    state.head = branchNames.at(-1);
+    state.selectedStep = Math.min(3,state.branches.length);
+    addLog('gh stack init ' + branchNames.join(' '), 'Initialized ' + branchNames.length + ' layer(s), from ' + branchNames[0] + ' on main to ' + branchNames.at(-1) + '. Checked out the top branch.');
+    explain('<strong>Stack initialized.</strong> ' + branchNames.map(escapeHtml).join(' → ') + ' is now a branch chain rooted at <strong>main</strong>. The command checks out the last branch in the list, the top of the stack.');
+    render();
+  }
+  function addBranch(name) {
+    const active = activeBranches();
+    if (!active.length) {
+      addLog('gh stack add ' + name, 'No active stack exists. Run gh stack init first.'); render(); return;
+    }
+    if (!topBranch() || state.head !== topBranch().name) {
+      addLog('gh stack add ' + name, 'You must run gh stack add from the top branch. Run gh stack top first.'); render(); return;
+    }
+    if (state.branches.some(branch => branch.name === name)) {
+      addLog('gh stack add ' + name, 'That branch name already exists in this stack.'); render(); return;
+    }
+    const branch = makeBranch(name,state.branches.length);
+    state.branches.push(branch);
+    state.head = name;
+    state.selectedStep = Math.min(3,active.length + 1);
+    state.dirty = false;
+    addLog('gh stack add ' + name, 'Created ' + name + ' on top of ' + branch.originalBase + ' and checked it out.');
+    explain('<strong>New layer added.</strong> <code>' + escapeHtml(name) + '</code> is based on <strong>' + escapeHtml(branch.originalBase) + '</strong>. Its pull request will target this immediate parent, keeping its diff focused on this layer.');
+    render();
+  }
+  function submitStack() {
+    const active = activeBranches();
+    if (!active.length) {
+      addLog('gh stack submit','There are no active branches to submit. Initialize a stack first.'); render(); return;
+    }
+    if (state.dirty) {
+      addLog('gh stack submit','The bottom branch changed. Run gh stack rebase before submitting this demo stack.');
+      explain('<strong>Rebase required first.</strong> The simulator is asking you to rebase dependent branches before submitting the updated stack.','warn','Run gh stack rebase, then submit again.');
+      render(); return;
+    }
+    const created = [];
+    let previous = null;
+    active.forEach(branch => {
+      branch.baseBranch = previous ? previous.name : 'main';
+      if (branch.pr === null) { branch.pr = state.nextPr++; created.push('#' + branch.pr); }
+      previous = branch;
+    });
+    addLog('gh stack submit', created.length ? 'Pushed active branches and created PRs ' + created.join(', ') + '. Existing PRs were updated and the Stack was linked.' : 'Pushed active branches and updated the existing PRs and Stack.');
+    explain('<strong>Stack submitted.</strong> Each active branch now has a pull request. Every PR targets the first non-merged branch below it; the bottom PR targets <strong>main</strong>.','ok','Published in the simulation only. No network request was made.');
+    render();
+  }
+  function move(where) {
+    const active = activeBranches();
+    if (!active.length) {
+      state.head = 'main';
+      addLog('gh stack ' + where,'No active stack; HEAD remains on main.'); render(); return;
+    }
+    let index = currentIndex();
+    if (where === 'top') index = active.length - 1;
+    else if (where === 'bottom') index = 0;
+    else if (where === 'trunk') index = -1;
+    else if (where === 'up') index = Math.min(active.length - 1,index + 1);
+    else if (where === 'down') index = Math.max(-1,index - 1);
+    state.head = index < 0 ? 'main' : active[index].name;
+    addLog('gh stack ' + where,'HEAD is now ' + state.head + '.');
+    explain('<strong>HEAD moved to ' + escapeHtml(state.head) + '.</strong> Navigation changes your checked-out branch; it does not change branch ancestry or PR base relationships.');
+    render();
+  }
+  function checkout(name) {
+    const branch = activeBranches().find(item => item.name === name);
+    if (!branch) {
+      addLog('gh stack checkout ' + name,'Branch not found among active branches in this demo.'); render(); return;
+    }
+    state.head = name;
+    addLog('gh stack checkout ' + name,'Checked out ' + name + '.');
+    explain('<strong>Checked out ' + escapeHtml(name) + '.</strong> HEAD moved, but the stack order and PR base relationships stayed the same.');
+    render();
+  }
+  function addBottomCommit() {
+    const bottom = activeBranches()[0];
+    if (!bottom) { addLog('git commit','There is no active stack branch to change.'); render(); return; }
+    bottom.commits++;
+    state.head = bottom.name;
+    state.dirty = true;
+    addLog('git commit','Added a commit to ' + bottom.name + ' and checked it out. Higher branches now need to be replayed on the updated parent.');
+    explain('<strong>The bottom branch changed.</strong> HEAD is now on <code>' + escapeHtml(bottom.name) + '</code>. Run <code>gh stack rebase --upstack</code> to replay this branch and every branch above it.', 'warn', 'The stack is marked as needing a rebase.');
+    render();
+  }
+  function rebaseStack(upstack=false) {
+    const active = activeBranches();
+    if (!active.length) { addLog('gh stack rebase','There is no active stack to rebase.'); render(); return; }
+    const current = currentIndex();
+    const start = upstack && current >= 0 ? current : 0;
+    let previous = start > 0 ? active[start - 1] : null;
+    for (let i = start; i < active.length; i++) {
+      const branch = active[i];
+      const nextBase = previous ? previous.name : 'main';
+      if (branch.baseBranch !== nextBase || state.dirty || i >= start) branch.rebaseCount++;
+      branch.baseBranch = nextBase;
+      previous = branch;
+    }
+    state.dirty = false;
+    const command = upstack ? 'gh stack rebase --upstack' : 'gh stack rebase';
+    addLog(command, upstack ? 'Fetched from the remote and rebased from ' + active[start].name + ' through the top of the stack (simulated).' : 'Fetched from the remote and cascade-rebased the active stack (simulated).');
+    explain('<strong>Cascading rebase complete.</strong> The selected branch and the branches above it have been replayed in dependency order. Merged parents are skipped so the first remaining layer can be based on the next unmerged ancestor. In a real repository, a conflict may pause the rebase until you resolve it.','ok','The active stack is synchronized in this simulation.');
+    render();
+  }
+  function mergeThrough(pr) {
+    const target = state.branches.findIndex(branch => branch.pr === Number(pr) && !branch.merged);
+    if (target < 0) { addLog('gh stack merge ' + pr,'No unmerged PR with that number exists in the current stack. Submit the stack first.'); render(); return; }
+    const selected = state.branches[target];
+    const mergedNow = [];
+    for (let i = 0; i <= target; i++) {
+      const branch = state.branches[i];
+      if (!branch.merged) { branch.merged = true; state.merged.push(branch.name); mergedNow.push('PR #' + branch.pr); }
+    }
+    const active = activeBranches();
+    state.head = active.length ? active.at(-1).name : 'main';
+    state.dirty = false;
+    addLog('gh stack merge ' + pr,'Merged ' + (mergedNow.length ? mergedNow.join(', ') : 'no additional PRs') + ' through PR #' + pr + '.');
+    explain('<strong>Stack merge simulated through PR #' + escapeHtml(pr) + '.</strong> Its unmerged dependencies below it were included. ' + (active.length ? 'Higher layers remain open. Their base is left unchanged here; run <code>gh stack rebase</code> or <code>gh stack sync</code> to rebase them over merged parents.' : 'All layers have landed; the stack is complete.'),'ok','The merge was simulated only. No pull requests or repository branches were changed.');
+    render();
+  }
+  function renderGraph() {
+    const graph = $('graph');
+    const reversed = state.branches.slice().reverse();
+    let html = '';
+    reversed.forEach((branch,reverseIndex) => {
+      if (reverseIndex) html += '<div class="connector"><span>↓</span></div>';
+      const status = branch.merged ? 'MERGED' : branch.pr ? 'PR #' + branch.pr + ' · OPEN' : 'LOCAL · NOT SUBMITTED';
+      const selected = state.head === branch.name && !branch.merged;
+      html += '<button type="button" class="branch ' + (selected ? 'selected ' : '') + (branch.merged ? 'merged' : '') + '" data-branch="' + escapeHtml(branch.name) + '" ' + (branch.merged ? 'disabled' : '') + '>' +
+        '<div class="branchtop"><span class="branchname"><i class="branchdot" style="background:' + branch.color + '"></i>' + escapeHtml(branch.name) + '</span><span class="status">' + (selected ? '● HEAD' : status) + '</span></div>' +
+        '<div class="branchmeta">' + escapeHtml(branch.title) + ' · base: ' + escapeHtml(baseFor(branch)) + '</div>' +
+        '<div class="branchmeta">' + branch.commits + ' commit(s) · ' + branch.files + ' changed files' + (branch.rebaseCount ? ' · ' + branch.rebaseCount + ' rebase(s)' : '') + '</div></button>';
+    });
+    if (reversed.length) html += '<div class="connector"><span>↓</span></div>';
+    html += '<div class="branch trunk"><div class="branchtop"><span class="branchname">◉ main</span><span class="status">TRUNK</span></div><div class="branchmeta">Base branch · starting point</div></div>';
+    graph.innerHTML = html;
+    const active = activeBranches();
+    $('stack-status').textContent = !state.branches.length ? 'NO ACTIVE STACK' : state.dirty ? 'REBASE NEEDED' : active.length ? (active.some(b => b.pr === null) ? 'LOCAL · CHANGES PENDING' : 'PUBLISHED · ' + active.length + ' OPEN') : 'STACK MERGED';
+    $('head').innerHTML = 'HEAD → <strong>' + escapeHtml(state.head) + '</strong> ' + (state.head === 'main' ? '· trunk' : '· checked out');
+    $('graph-hint').textContent = state.branches.length ? 'Select an active branch to check it out. Merged layers are retained in the graph for context.' : 'Run gh stack init feature-auth to create the first branch.';
+    $('stat-branches').textContent = active.length;
+    $('stat-prs').textContent = active.filter(b => b.pr !== null).length;
+    $('stat-merged').textContent = state.merged.length;
+    $('op-count').textContent = state.operations + ' operations';
+    $('log').innerHTML = state.logs.length ? state.logs.map(entry => '<div><div class="cmd">$ ' + escapeHtml(entry.command) + '</div><div class="out">' + escapeHtml(entry.output) + '</div></div>').join('') : '<div class="out">Welcome. Try: gh stack init feature-auth</div>';
+    $('log').scrollTop = $('log').scrollHeight;
+
+    $('init').disabled = state.branches.length > 0;
+    $('add-api').disabled = !active.length || active.length !== 1 || state.head !== active.at(-1).name || state.branches.some(b => b.name === 'feature-api');
+    $('add-ui').disabled = active.length < 2 || active.length !== 2 || state.head !== active.at(-1).name || state.branches.some(b => b.name === 'feature-ui');
+    $('submit').disabled = !active.length || !active.some(b => b.pr === null) || state.dirty;
+    $('add-commit').disabled = !active.length;
+    $('rebase').disabled = !active.length;
+    $('rebase-note').style.display = state.dirty ? 'block' : 'none';
+    $('steps').querySelectorAll('.step').forEach((element,index) => element.classList.toggle('active',index === state.selectedStep));
+
+    const openPrs = active.filter(branch => branch.pr !== null);
+    $('merge-select').innerHTML = openPrs.length ? openPrs.map(branch => '<option value="' + branch.pr + '">Merge through PR #' + branch.pr + ' — ' + escapeHtml(branch.name) + '</option>').join('') : '<option value="">' + (active.length ? 'Submit the stack first' : 'No unmerged PRs') + '</option>';
+    $('merge-select').disabled = !openPrs.length;
+    $('merge').disabled = !openPrs.length;
+  }
+  const commandList = [
+    ['gh stack init feature-auth feature-api feature-ui','Initialize the stack and create a chain of branches in one command.'],
+    ['gh stack add feature-api','Add a new branch above the current top branch.'],
+    ['gh stack submit','Push branches and create or update linked pull requests.'],
+    ['gh stack view --short','View the current stack in compact output.'],
+    ['gh stack up','Move one layer away from the trunk.'],
+    ['gh stack down','Move one layer toward the trunk.'],
+    ['gh stack rebase --upstack','Rebase the current branch and every layer above it.'],
+    ['gh stack sync','Fetch, reconcile, rebase, push, and sync PR state.'],
+    ['gh stack merge 2','Merge PR #2 and every unmerged PR below it.'],
+    ['gh stack checkout feature-api','Check out a branch in the stack.']
+  ];
+  $('command-list').innerHTML = commandList.map(([command,description]) => '<div class="command"><div><code>' + escapeHtml(command) + '</code><p>' + escapeHtml(description) + '</p></div><button type="button" class="try" data-try="' + escapeHtml(command) + '">Try</button></div>').join('');
+
+  function runCommand(rawCommand) {
+    const command = rawCommand.trim().replace(/\s+/g,' ');
+    if (!command) return;
+    const parts = command.split(' ');
+    if (parts[0] !== 'gh' || parts[1] !== 'stack') {
+      addLog(command,'This playground simulates gh stack commands. Try: gh stack view --short'); render(); return;
+    }
+    const subcommand = parts[2] || '';
+    if (subcommand === 'init') {
+      const names = [];
+      for (let i = 3; i < parts.length; i++) {
+        if (parts[i] === '--base' || parts[i] === '-b') { i++; continue; }
+        if (parts[i].startsWith('--base=')) continue;
+        if (!parts[i].startsWith('-')) names.push(parts[i]);
+      }
+      initStack(names);
+    } else if (subcommand === 'add') {
+      addBranch(parts[3] || 'feature-new');
+    } else if (subcommand === 'submit') {
+      submitStack();
+    } else if (subcommand === 'view') {
+      const output = state.branches.length ? state.branches.map(branch => branch.name + ' → base: ' + (branch.merged ? branch.originalBase : baseFor(branch)) + ' · ' + (branch.merged ? 'MERGED' : branch.pr ? 'PR #' + branch.pr : 'not submitted')).join('\n') : 'No active stack.';
+      addLog(command,output);
+      explain('<strong>Stack view.</strong> The branch order, PRs, and parent branch for each layer are shown in the terminal.');
+      render();
+    } else if (['up','down','top','bottom','trunk'].includes(subcommand)) {
+      move(subcommand);
+    } else if (subcommand === 'rebase') {
+      rebaseStack(parts.includes('--upstack'));
+    } else if (subcommand === 'merge') {
+      const pr = Number((parts[3] || '').replace('#',''));
+      if (pr) mergeThrough(pr);
+      else { addLog(command,'For this simulator, provide a PR number, for example: gh stack merge 2.'); render(); }
+    } else if (subcommand === 'checkout') {
+      const target = parts[3] || '';
+      checkout(target);
+    } else if (subcommand === 'push') {
+      if (!activeBranches().length) addLog(command,'There are no active branches to push.');
+      else addLog(command,'Pushed all active stack branches (simulated). Push does not create or update pull requests.');
+      explain('<strong>Push only.</strong> <code>gh stack push</code> pushes active branches. Use <code>gh stack submit</code> to create or update PRs and link the Stack.');
+      render();
+    } else if (subcommand === 'sync') {
+      const active = activeBranches();
+      if (!active.length) { addLog(command,'There is no active stack to sync.'); render(); return; }
+      let previous = null;
+      active.forEach(branch => {
+        const nextBase = previous ? previous.name : 'main';
+        if (branch.baseBranch !== nextBase || state.dirty) branch.rebaseCount++;
+        branch.baseBranch = nextBase;
+        previous = branch;
+      });
+      state.dirty = false;
+      addLog(command,'Fetched and reconciled remote state, rebased when needed, pushed active branches, and refreshed PR/Stack state. No new PRs were created.');
+      explain('<strong>Stack synced.</strong> <code>gh stack sync</code> reconciles the local stack with GitHub, rebases when needed, pushes active branches, and refreshes PR state. It does not create PRs; use <code>gh stack submit</code> for that.','ok','The simulated stack is synchronized.');
+      render();
+    } else if (subcommand === 'help') {
+      addLog(command,'Available in this demo: init, add, submit, view, checkout, up, down, top, bottom, trunk, rebase, push, sync, merge.'); render();
+    } else {
+      addLog(command,'That command is not implemented in this learning simulation. Try gh stack help.'); render();
+    }
+  }
+  function render() { renderGraph(); }
+  function setTab(name) {
+    state.activeTab = name;
+    app.querySelectorAll('.tab').forEach(button => {
+      const selected = button.dataset.tab === name;
+      button.classList.toggle('active',selected);
+      button.setAttribute('aria-selected',String(selected));
+    });
+    app.querySelectorAll('.tabcontent').forEach(panel => panel.classList.toggle('active',panel.id === 'tab-' + name));
+  }
+
+  app.addEventListener('click',event => {
+    const button = event.target.closest('button');
+    if (!button || !app.contains(button)) return;
+    if (button.dataset.tab) { setTab(button.dataset.tab); return; }
+    if (button.dataset.action === 'reset') {
+      state.branches = []; state.head = 'main'; state.nextPr = 1; state.merged = []; state.logs = []; state.operations = 0; state.dirty = false; state.selectedStep = 0;
+      explain('Start with <strong>main</strong>. Initialize the stack with <code>gh stack init feature-auth</code>. This creates the bottom branch on top of trunk.');
+      render(); return;
+    }
+    if (button.id === 'init') { initStack(['feature-auth']); return; }
+    if (button.id === 'add-api') { addBranch('feature-api'); return; }
+    if (button.id === 'add-ui') { addBranch('feature-ui'); return; }
+    if (button.id === 'submit') { submitStack(); return; }
+    if (button.id === 'add-commit') { addBottomCommit(); return; }
+    if (button.id === 'rebase') { rebaseStack(true); return; }
+    if (button.id === 'merge') { mergeThrough($('merge-select').value); return; }
+    if (button.dataset.nav) { move(button.dataset.nav); return; }
+    if (button.dataset.branch) { checkout(button.dataset.branch); return; }
+    if (button.dataset.try) { $('cmd-input').value = button.dataset.try; $('cmd-input').focus(); setTab('build'); return; }
+    if (button.dataset.step !== undefined) {
+      state.selectedStep = Number(button.dataset.step);
+      app.querySelectorAll('[data-step]').forEach(step => step.classList.toggle('active',Number(step.dataset.step) === state.selectedStep));
+    }
+  });
+  $('cmd-form').addEventListener('submit',event => {
+    event.preventDefault();
+    const input = $('cmd-input');
+    const command = input.value;
+    input.value = '';
+    runCommand(command);
+  });
+  $('merge-select').addEventListener('change',() => {});
+
+  render();
+})();
+</script>
+</body>
+</html>
