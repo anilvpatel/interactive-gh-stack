@@ -6,8 +6,8 @@
 <title>gh stack — Interactive Learning Lab</title>
 <style>
 :root{color-scheme:light;--bg:#f6f8fa;--surface:#fff;--surface2:#f6f8fa;--text:#1f2328;--muted:#656d76;--border:#d1d9e0;--blue:#0969da;--bluebg:#ddf4ff;--green:#1a7f37;--greenbg:#dafbe1;--purple:#8250df;--amber:#9a6700;--amberbg:#fff8c5;--red:#cf222e;--shadow:0 1px 2px #1f23280d}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.shell{max-width:1160px;margin:0 auto;padding:28px 20px 52px}.eyebrow{display:flex;gap:8px;align-items:center;font-size:11px;font-weight:750;letter-spacing:.12em;color:var(--muted)}.green-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}h1{font-size:30px;line-height:1.15;letter-spacing:-.04em;margin:10px 0 7px}.intro{color:var(--muted);max-width:760px;margin:0 0 22px}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 14px}.tab{border:1px solid var(--border);border-radius:9px;background:var(--surface);padding:9px 13px;font-weight:650;font-size:12px;color:var(--text)}.tab.active{border-color:var(--blue);background:var(--bluebg);color:#0550ae}.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;box-shadow:var(--shadow);min-width:0}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.cardhead h2,.card h2{font-size:14px;margin:0;font-weight:750}.muted{color:var(--muted)}.tiny{font-size:11px}.lesson{margin-bottom:14px}.lesson-desc{color:var(--muted);margin:5px 0 14px}.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.step{border:1px solid var(--border);border-radius:9px;padding:10px;text-align:left;background:var(--surface);min-width:0}.step.active{border-color:var(--blue);background:#f0f6ff}.step .number{font-size:10px;color:var(--muted)}.step b{display:block;font-size:12px;margin:4px 0}.step small{display:block;color:var(--muted);font-size:10px;line-height:1.35}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:8px 11px;font-weight:650;font-size:12px;color:var(--text)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.success{color:var(--green);border-color:#82c99a}.btn:hover:not(:disabled),.tab:hover{filter:brightness(.97)}.grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:14px;margin-top:14px;align-items:start}.workbench{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:16px;align-items:start}.graphwrap{overflow:auto;max-height:600px;border:1px solid var(--border);border-radius:9px;background:#fff}.cg{display:block}.legend{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:10px;color:var(--muted);margin-top:9px;line-height:1.5}.legend i{display:inline-block;width:14px;height:0;border-top:2px solid #8c959f;vertical-align:middle;margin-right:5px}.legend i.dash{border-top:2px dashed #bf8700}.branch-graph{display:flex;flex-direction:column;align-items:stretch;padding:12px 6px 4px}.branch{width:100%;border:1px solid var(--border);border-radius:9px;padding:10px 12px;background:#fff;text-align:left;margin:0;color:var(--text)}.branch.selected{border:2px solid var(--blue);padding:9px 11px;box-shadow:0 0 0 2px #ddf4ff}.branch.merged{background:#f0fff4;border-color:#82c99a;cursor:default}.branch.trunk{border-style:dashed;background:var(--surface2);cursor:default}.branchtop{display:flex;align-items:center;justify-content:space-between;gap:8px}.branchname{font-weight:750;font-size:12px;overflow-wrap:anywhere}.branchmeta{font-size:10px;color:var(--muted);margin-top:4px}.branchdot{display:inline-block;width:8px;height:8px;border-radius:3px;margin-right:7px}.connector{height:27px;display:flex;align-items:center;justify-content:center;color:#8c959f;position:relative}.connector:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--border)}.connector span{position:relative;background:var(--surface);padding:0 7px}.stackinfo{padding:9px;border-radius:8px;background:var(--surface2);font-size:11px;margin-top:10px}.explain{font-size:12px;line-height:1.65}.explain strong{font-weight:750}.callout{padding:10px;border-radius:8px;font-size:11px;margin-top:9px}.callout.warn{background:var(--amberbg);border:1px solid #d4a72c}.callout.ok{background:var(--greenbg);border:1px solid #82c99a}.terminal{background:#0d1117;border:1px solid #30363d;border-radius:10px;padding:13px;color:#e6edf3;min-height:218px;display:flex;flex-direction:column}.termhead{font-size:10px;color:#8b949e;display:flex;justify-content:space-between;margin-bottom:10px}.log{font:11px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-y:auto;max-height:180px;display:flex;flex-direction:column;gap:7px;white-space:pre-wrap;overflow-wrap:anywhere}.log .cmd{color:#79c0ff}.log .out{color:#c9d1d9}.cmdrow{display:flex;gap:7px;margin-top:auto;padding-top:10px}.cmdrow input{min-width:0;flex:1;background:#161b22;border:1px solid #30363d;color:#e6edf3;border-radius:7px;padding:9px;font:11px ui-monospace,monospace}.cmdrow button{background:#238636;color:white;border:0;border-radius:7px;padding:8px 12px;font-size:11px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}.stat{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:10px}.stat b{display:block;font-size:18px}.stat span{font-size:10px;color:var(--muted)}.commandlist{display:grid;grid-template-columns:1fr 1fr;gap:8px}.command{border:1px solid var(--border);border-radius:9px;padding:10px;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.command code{font-size:11px;overflow-wrap:anywhere}.command p{margin:4px 0 0;font-size:10px;color:var(--muted)}.try{padding:5px 8px;font-size:10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);white-space:nowrap}.tabcontent{display:none}.tabcontent.active{display:block}.navactions{display:flex;gap:7px;flex-wrap:wrap}.select{border:1px solid var(--border);border-radius:7px;padding:9px;background:#fff;min-width:240px;max-width:100%}.footer{font-size:10px;color:var(--muted);margin-top:16px;line-height:1.6}.footer a{color:var(--blue)}code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 4px;font-size:.92em}.hint{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5}.status{border:1px solid var(--border);border-radius:99px;padding:3px 8px;font-size:10px;font-weight:700;white-space:nowrap}.lower-note{font-size:11px;color:var(--muted);line-height:1.6;margin-top:8px}
-@media(max-width:760px){.shell{padding:20px 12px 40px}h1{font-size:25px}.grid,.workbench{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.commandlist{grid-template-columns:1fr}.card{padding:13px}.select{min-width:0;flex:1}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.shell{max-width:1160px;margin:0 auto;padding:28px 20px 52px}.eyebrow{display:flex;gap:8px;align-items:center;font-size:11px;font-weight:750;letter-spacing:.12em;color:var(--muted)}.green-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}h1{font-size:30px;line-height:1.15;letter-spacing:-.04em;margin:10px 0 7px}.intro{color:var(--muted);max-width:760px;margin:0 0 22px}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 14px}.tab{border:1px solid var(--border);border-radius:9px;background:var(--surface);padding:9px 13px;font-weight:650;font-size:12px;color:var(--text)}.tab.active{border-color:var(--blue);background:var(--bluebg);color:#0550ae}.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;box-shadow:var(--shadow);min-width:0}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.cardhead h2,.card h2{font-size:14px;margin:0;font-weight:750}.muted{color:var(--muted)}.tiny{font-size:11px}.lesson{margin-bottom:14px}.lesson-desc{color:var(--muted);margin:5px 0 14px}.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.step{border:1px solid var(--border);border-radius:9px;padding:10px;text-align:left;background:var(--surface);min-width:0}.step.active{border-color:var(--blue);background:#f0f6ff}.step .number{font-size:10px;color:var(--muted)}.step b{display:block;font-size:12px;margin:4px 0}.step small{display:block;color:var(--muted);font-size:10px;line-height:1.35}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:8px 11px;font-weight:650;font-size:12px;color:var(--text)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.success{color:var(--green);border-color:#82c99a}.btn:hover:not(:disabled),.tab:hover{filter:brightness(.97)}.grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:14px;margin-top:14px;align-items:start}.workbench{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:16px;align-items:start}.graphwrap{overflow:auto;max-height:600px;border:1px solid var(--border);border-radius:9px;background:#fff}.cg{display:block}.legend{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:10px;color:var(--muted);margin-top:9px;line-height:1.5}.legend i{display:inline-block;width:14px;height:0;border-top:2px solid #8c959f;vertical-align:middle;margin-right:5px}.legend i.dash{border-top:2px dashed #bf8700}.branch-graph{display:flex;flex-direction:column;align-items:stretch;padding:12px 6px 4px}.branch{width:100%;border:1px solid var(--border);border-radius:9px;padding:10px 12px;background:#fff;text-align:left;margin:0;color:var(--text)}.branch.selected{border:2px solid var(--blue);padding:9px 11px;box-shadow:0 0 0 2px #ddf4ff}.branch.merged{background:#f0fff4;border-color:#82c99a;cursor:default}.branch.trunk{border-style:dashed;background:var(--surface2);cursor:default}.branchtop{display:flex;align-items:center;justify-content:space-between;gap:8px}.branchname{font-weight:750;font-size:12px;overflow-wrap:anywhere}.branchmeta{font-size:10px;color:var(--muted);margin-top:4px}.branchdot{display:inline-block;width:8px;height:8px;border-radius:3px;margin-right:7px}.connector{height:27px;display:flex;align-items:center;justify-content:center;color:#8c959f;position:relative}.connector:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--border)}.connector span{position:relative;background:var(--surface);padding:0 7px}.stackinfo{padding:9px;border-radius:8px;background:var(--surface2);font-size:11px;margin-top:10px}.explain{font-size:12px;line-height:1.65}.explain strong{font-weight:750}.callout{padding:10px;border-radius:8px;font-size:11px;margin-top:9px}.callout.warn{background:var(--amberbg);border:1px solid #d4a72c}.callout.ok{background:var(--greenbg);border:1px solid #82c99a}.terminal{background:#0d1117;border:1px solid #30363d;border-radius:10px;padding:13px;color:#e6edf3;min-height:218px;display:flex;flex-direction:column}.termhead{font-size:10px;color:#8b949e;display:flex;justify-content:space-between;margin-bottom:10px}.log{font:11px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-y:auto;max-height:180px;display:flex;flex-direction:column;gap:7px;white-space:pre-wrap;overflow-wrap:anywhere}.log .cmd{color:#79c0ff}.log .out{color:#c9d1d9}.cmdrow{display:flex;gap:7px;margin-top:auto;padding-top:10px}.cmdrow input{min-width:0;flex:1;background:#161b22;border:1px solid #30363d;color:#e6edf3;border-radius:7px;padding:9px;font:11px ui-monospace,monospace}.cmdrow button{background:#238636;color:white;border:0;border-radius:7px;padding:8px 12px;font-size:11px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:14px}.stat{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:10px}.stat b{display:block;font-size:18px}.stat span{font-size:10px;color:var(--muted)}.commandlist{display:grid;grid-template-columns:1fr 1fr;gap:8px}.command{border:1px solid var(--border);border-radius:9px;padding:10px;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.command code{font-size:11px;overflow-wrap:anywhere}.command p{margin:4px 0 0;font-size:10px;color:var(--muted)}.try{padding:5px 8px;font-size:10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);white-space:nowrap}.tabcontent{display:none}.tabcontent.active{display:block}.navactions{display:flex;gap:7px;flex-wrap:wrap}.select{border:1px solid var(--border);border-radius:7px;padding:9px;background:#fff;min-width:240px;max-width:100%}.footer{font-size:10px;color:var(--muted);margin-top:16px;line-height:1.6}.footer a{color:var(--blue)}code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 4px;font-size:.92em}.hint{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5}.status{border:1px solid var(--border);border-radius:99px;padding:3px 8px;font-size:10px;font-weight:700;white-space:nowrap}.lower-note{font-size:11px;color:var(--muted);line-height:1.6;margin-top:8px}.conflict{border-color:#d4a72c;background:#fffdf0}.cfile{margin:0;background:#0d1117;color:#e6edf3;border-radius:9px;padding:12px;font:11px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;overflow:auto;white-space:pre}.cfile .cfh{color:#8b949e}.cfile .cfm{color:#ff7b72;font-weight:700}.cfile .cfo{color:#7ee787}.cfile .cft{color:#79c0ff}.cfsteps{margin:0;padding-left:18px;font-size:12px;line-height:1.7}
+@media(max-width:760px){.shell{padding:20px 12px 40px}h1{font-size:25px}.grid,.workbench{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.commandlist{grid-template-columns:1fr}.card{padding:13px}.select{min-width:0;flex:1}.stats{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -20,7 +20,8 @@
     <button type="button" class="tab active" data-tab="build" aria-selected="true">01 · Build</button>
     <button type="button" class="tab" data-tab="navigate" aria-selected="false">02 · Navigate & rebase</button>
     <button type="button" class="tab" data-tab="merge" aria-selected="false">03 · Merge</button>
-    <button type="button" class="tab" data-tab="commands" aria-selected="false">04 · Commands</button>
+    <button type="button" class="tab" data-tab="conflicts" aria-selected="false">04 · Conflicts</button>
+    <button type="button" class="tab" data-tab="commands" aria-selected="false">05 · Commands</button>
   </nav>
 
   <section class="card lesson tabcontent active" id="tab-build">
@@ -38,6 +39,7 @@
       <button type="button" class="btn success" id="submit" disabled>Submit stack</button>
     </div>
     <div class="hint">You can also type commands in the terminal. Try <code>gh stack init feature-auth feature-api feature-ui</code> to create three layers in one step, and <code>git commit</code> to add a commit on the checked-out branch.</div>
+    <div class="callout ok" style="margin-top:12px"><strong>CI on a stack.</strong> GitHub evaluates every PR in a stack as if it targets the stack base (usually <code>main</code>), not the branch below it. A workflow that runs on <code>pull_request</code> events targeting <code>main</code> therefore runs for <em>every</em> PR in the stack, not only the bottom one, and required status checks must pass on every PR below a PR before it can merge. Watch the <em>CI runs started</em> counter: submitting three PRs starts three runs, and a rebase gives the rewritten branches new commits, so their checks run again when you push. See <a href="https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/optimizing-ci-for-stacked-pull-requests" target="_blank" rel="noopener">Optimizing CI for stacked pull requests</a>.</div>
   </section>
 
   <section class="card lesson tabcontent" id="tab-navigate">
@@ -50,18 +52,41 @@
     <p class="explain"><strong>Try a cascading rebase.</strong> Add a commit to the bottom branch. The simulator checks out that branch, then <code>gh stack rebase --upstack</code> replays the branches above it onto its new tip.</p>
     <div class="actions"><button type="button" class="btn" id="add-commit" disabled>＋ Add commit to bottom</button><button type="button" class="btn primary" id="rebase" disabled>↻ Run gh stack rebase --upstack</button></div>
     <div id="rebase-note" class="callout warn" style="display:none">A branch no longer starts at its parent's tip. Run a rebase from the changed branch up through the top of the stack.</div>
+    <hr style="border:0;border-top:1px solid var(--border);margin:16px 0">
+    <p class="explain"><strong>Trunk moved ahead.</strong> Commit on <code>main</code>, as if a teammate's work landed there. Every branch now starts at an older <code>main</code> commit, so the stack loses its linear history. <code>gh stack rebase</code> fetches the trunk and replays the stack onto it; <code>gh stack push</code> then updates the PRs.</p>
+    <div class="actions"><button type="button" class="btn" id="commit-main" disabled>＋ Commit on main</button><button type="button" class="btn primary" data-run="gh stack rebase">↻ Run gh stack rebase</button><button type="button" class="btn" data-run="gh stack push">⇡ Run gh stack push</button></div>
   </section>
 
   <section class="card lesson tabcontent" id="tab-merge">
     <div class="cardhead"><div><h2>Merge a stack</h2><div class="tiny muted">Choose a PR; its unmerged dependencies below it are included.</div></div></div>
-    <p class="explain">Merging through PR #2 merges PR #1 and PR #2 together. PRs above #2 remain open. In the real CLI, the selected merge set is handled as one operation; GitHub's merge requirements and merge queue still apply.</p>
-    <div class="actions"><select class="select" id="merge-select" aria-label="Select a pull request" disabled><option value="">Submit the stack first</option></select><button type="button" class="btn primary" id="merge" disabled>Merge selected stack layers</button></div>
+    <p class="explain">Merging through PR #2 merges PR #1 and PR #2 together. PRs above #2 remain open. In the real CLI the merge set is all-or-nothing: if any PR can't merge, none do. GitHub checks each PR against the rules for the stack base, so every PR up to the one you pick needs passing required checks and a linear history.</p>
+    <div class="actions"><select class="select" id="merge-method" aria-label="Merge method" style="min-width:170px"><option value="squash">Squash and merge</option><option value="merge">Merge commit</option><option value="rebase">Rebase and merge</option></select><select class="select" id="merge-select" aria-label="Select a pull request" disabled><option value="">Submit the stack first</option></select><button type="button" class="btn primary" id="merge" disabled>Merge selected stack layers</button></div>
+    <div class="hint"><strong>What the method changes.</strong> Squash lands one new commit per PR, and rebase replays the commits with new SHAs, so the original commits disappear from <code>main</code> and the branches above must be rebased. A merge commit keeps the original commits, so the branches above still start from commits that exist on <code>main</code> and have nothing to replay.</div>
     <div class="hint">This tab demonstrates merge scope. It does not call GitHub or merge a real pull request.</div>
+  </section>
+
+  <section class="card lesson tabcontent" id="tab-conflicts">
+    <div class="cardhead"><div><h2>Rebase conflicts</h2><div class="tiny muted">A conflict pauses the rebase; you either finish it or put everything back.</div></div></div>
+    <p class="explain">Build a stack with at least two branches and submit it, then create a conflict: add a commit that edits the same line your stack edits, and run <code>gh stack rebase</code>. The rebase stops on the first branch that cannot be replayed cleanly. Resolve the file, stage it with <code>git add</code>, then run <code>gh stack rebase --continue</code>. Or run <code>gh stack rebase --abort</code> to restore every branch to its state before the rebase. While a rebase is paused, other stack commands are blocked.</p>
+    <div class="actions"><button type="button" class="btn" id="conflict-main" disabled>＋ Conflicting commit on main</button><button type="button" class="btn" id="conflict-bottom" disabled>＋ Conflicting commit on bottom branch</button><button type="button" class="btn primary" data-run="gh stack rebase">↻ Run gh stack rebase</button></div>
+    <div class="hint"><code>gh stack sync</code> reacts differently: on a conflict it restores every branch and tells you to run <code>gh stack rebase</code> to resolve it interactively. <code>gh stack init</code> also enables <code>git rerere</code>, so a resolution Git has seen before is reused on later rebases (not simulated here).</div>
   </section>
 
   <section class="card lesson tabcontent" id="tab-commands">
     <div class="cardhead"><div><h2>Command reference</h2><div class="tiny muted">Select Try to load a command into the simulated terminal.</div></div></div>
     <div class="commandlist" id="command-list"></div>
+  </section>
+
+  <section class="card conflict" id="conflict" style="display:none;margin-top:14px">
+    <div class="cardhead"><div><h2 id="cf-title">Rebase paused</h2><div class="tiny muted" id="cf-sub"></div></div><span class="status" id="cf-stage"></span></div>
+    <div class="workbench" style="grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)">
+      <pre class="cfile" id="cf-file"></pre>
+      <div>
+        <ol class="cfsteps"><li>Edit the file to remove the conflict markers.</li><li>Stage it with <code>git add</code>.</li><li>Run <code>gh stack rebase --continue</code>, or <code>--abort</code> to restore every branch.</li></ol>
+        <div class="actions"><button type="button" class="btn" id="cf-resolve">✎ Resolve in editor</button><button type="button" class="btn" id="cf-add">git add</button><button type="button" class="btn primary" id="cf-continue">▶ --continue</button><button type="button" class="btn" id="cf-abort">✕ --abort</button></div>
+        <div class="hint">You can also type <code>git add</code> and <code>gh stack rebase --continue</code> in the terminal.</div>
+      </div>
+    </div>
   </section>
 
   <div class="grid">
@@ -99,6 +124,7 @@
     <div class="stat"><b id="stat-branches">0</b><span>Active branches</span></div>
     <div class="stat"><b id="stat-prs">0</b><span>Open pull requests</span></div>
     <div class="stat"><b id="stat-merged">0</b><span>Merged pull requests</span></div>
+    <div class="stat"><b id="stat-ci">0</b><span>CI runs started</span></div>
   </div>
   <p class="footer">Based on GitHub's <a href="https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-stacked-pull-requests" target="_blank" rel="noopener">stacked PR guide</a> and the <a href="https://github.com/github/gh-stack" target="_blank" rel="noopener">official gh-stack extension</a>. This is a learning simulation, not an actual Git implementation. Branches in a stack build on the branch immediately below them; each PR targets its dependency below.</p>
 </div>
@@ -119,9 +145,13 @@
   const freshMain = () => ['Initial commit','Add project scaffolding','Update README'].map(msg => ({sha:newSha(),msg,prev:null}));
   let commitSeq = 0;
   const followUps = ['Address review feedback','Add unit tests','Fix edge case','Refactor helpers','Update docs'];
+  const mainFollowUps = ['Bump dependencies','Fix flaky integration test','Update CI workflow','Add CODEOWNERS entry'];
+  const conflictMsg = 'Change session TTL to 30 minutes', conflictFile = 'src/config.js';
+  let mainSeq = 0;
   const trunc = (text,max) => text.length > max ? text.slice(0,max - 1) + '\u2026' : text;
   const state = {
     branches: [], main: freshMain(), head:'main', nextPr:1, merged:[], logs:[], operations:0,
+    ciRuns:0, mergeMethod:'squash', rebase:null,
     activeTab:'build', selectedStep:0
   };
   const escapeHtml = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -149,34 +179,66 @@
     const originalBase = index === 0 ? 'main' : (previousActive ? previousActive.name : 'main');
     const baseSha = (previousActive ? previousActive.commits : state.main).at(-1).sha;
     const commits = preset.msgs.map(msg => ({sha:newSha(),msg,prev:null}));
-    return {title:preset.title,files:preset.files,detail:preset.detail,commits,baseSha,name,pr:null,merged:false,rebaseCount:0,originalBase,baseBranch:originalBase,color:colors[index % colors.length]};
+    return {title:preset.title,files:preset.files,detail:preset.detail,commits,baseSha,name,pr:null,ciSha:null,merged:false,rebaseCount:0,originalBase,baseBranch:originalBase,color:colors[index % colors.length]};
   }
   const parentTipSha = (active,i) => (i === 0 ? state.main : active[i - 1].commits).at(-1).sha;
   function staleInfo(active,i) {
     const parentCommits = i === 0 ? state.main : active[i - 1].commits;
     const parentName = i === 0 ? 'main' : active[i - 1].name;
     const at = parentCommits.findIndex(commit => commit.sha === active[i].baseSha);
-    if (at === parentCommits.length - 1) return null;
-    return {text: at < 0 ? 'base replaced; rebase onto ' + parentName : (parentCommits.length - 1 - at) + ' new commit(s) on ' + parentName + '; rebase needed'};
+    if (at < 0) return {text:'base replaced; rebase onto ' + parentName};
+    // A merge commit keeps the original commits, so it does not leave the branches above behind.
+    const behind = parentCommits.slice(at + 1).filter(commit => !commit.mergeOf).length;
+    return behind ? {text:behind + ' new commit(s) on ' + parentName + '; rebase needed'} : null;
   }
   const staleText = (active,branch) => { const info = staleInfo(active,active.indexOf(branch)); return info ? ' \u00b7 \u26a0 ' + escapeHtml(info.text) : ''; };
   const needsRebase = () => { const active = activeBranches(); return active.some((_,i) => staleInfo(active,i)); };
-  function replay(start) {
+  function conflictFor(active,i) {
+    const parentCommits = i === 0 ? state.main : active[i - 1].commits;
+    const at = parentCommits.findIndex(commit => commit.sha === active[i].baseSha);
+    return at < 0 ? null : parentCommits.slice(at + 1).find(commit => commit.conflict) || null;
+  }
+  function replay(start, resumeAt = -1) {
     const active = activeBranches(), replayed = [];
-    let cascade = false;
+    let cascade = resumeAt >= 0;
     for (let i = start; i < active.length; i++) {
       const branch = active[i];
-      branch.baseBranch = i === 0 ? 'main' : active[i - 1].name;
-      if (!cascade && !staleInfo(active,i)) continue;
+      const nextBase = i === 0 ? 'main' : active[i - 1].name;
+      if (!cascade && !staleInfo(active,i)) { branch.baseBranch = nextBase; continue; }
+      const clash = i === resumeAt ? null : conflictFor(active,i);
+      if (clash) return {replayed, conflict:{index:i, branchName:branch.name, clash}};
+      branch.baseBranch = nextBase;
       branch.commits.forEach(commit => { commit.prev = commit.sha; commit.sha = newSha(); });
       branch.baseSha = parentTipSha(active,i);
       branch.rebaseCount++;
       cascade = true;
       replayed.push(branch.name);
     }
-    return replayed;
+    return {replayed, conflict:null};
+  }
+  const snapshot = () => state.branches.map(branch => ({branch, commits:branch.commits.map(commit => ({...commit})), baseSha:branch.baseSha, baseBranch:branch.baseBranch, rebaseCount:branch.rebaseCount}));
+  const restore = snap => snap.forEach(({branch,commits,baseSha,baseBranch,rebaseCount}) => Object.assign(branch,{commits,baseSha,baseBranch,rebaseCount}));
+  const unpushed = () => activeBranches().some(branch => branch.pr !== null && branch.ciSha !== branch.commits.at(-1).sha);
+  const ciText = branch => branch.pr === null ? '' : ' · CI ' + (branch.ciSha === branch.commits.at(-1).sha ? '✓ on latest commits' : 'not run on latest commits');
+  function pushActive() {
+    const runs = [];
+    activeBranches().forEach(branch => {
+      const tip = branch.commits.at(-1).sha;
+      if (branch.pr === null || branch.ciSha === tip) return;
+      branch.ciSha = tip;
+      state.ciRuns++;
+      runs.push('#' + branch.pr);
+    });
+    return runs;
+  }
+  function busy(command) {
+    if (!state.rebase) return false;
+    addLog(command,'A rebase is paused on ' + state.rebase.branchName + '. Resolve the conflict, then run gh stack rebase --continue, or run gh stack rebase --abort.');
+    render();
+    return true;
   }
   function initStack(names) {
+    if (busy('gh stack init')) return;
     if (state.branches.length) {
       addLog('gh stack init ' + names.join(' '), 'A stack already exists in this playground. Reset first to start a new stack.');
       render(); return;
@@ -198,6 +260,7 @@
     render();
   }
   function addBranch(name) {
+    if (busy('gh stack add ' + name)) return;
     const active = activeBranches();
     if (!active.length) {
       addLog('gh stack add ' + name, 'No active stack exists. Run gh stack init first.'); render(); return;
@@ -217,6 +280,7 @@
     render();
   }
   function submitStack() {
+    if (busy('gh stack submit')) return;
     const active = activeBranches();
     if (!active.length) {
       addLog('gh stack submit','There are no active branches to submit. Initialize a stack first.'); render(); return;
@@ -233,11 +297,14 @@
       if (branch.pr === null) { branch.pr = state.nextPr++; created.push('#' + branch.pr); }
       previous = branch;
     });
-    addLog('gh stack submit', created.length ? 'Pushed active branches and created PRs ' + created.join(', ') + '. Existing PRs were updated and the Stack was linked.' : 'Pushed active branches and updated the existing PRs and Stack.');
-    explain('<strong>Stack submitted.</strong> Each active branch now has a pull request. Every PR targets the first non-merged branch below it; the bottom PR targets <strong>main</strong>.','ok','Published in the simulation only. No network request was made.');
+    const runs = pushActive();
+    const ciLog = runs.length ? ' CI started on ' + runs.join(', ') + '.' : '';
+    addLog('gh stack submit', (created.length ? 'Pushed active branches and created PRs ' + created.join(', ') + '. Existing PRs were updated and the Stack was linked.' : 'Pushed active branches and updated the existing PRs and Stack.') + ciLog);
+    explain('<strong>Stack submitted.</strong> Each active branch now has a pull request. Every PR targets the first non-merged branch below it; the bottom PR targets <strong>main</strong>.' + (runs.length ? ' <strong>CI:</strong> the checks that guard <code>main</code> run on each of the ' + runs.length + ' PRs (' + runs.join(', ') + '), not only the bottom one, because GitHub evaluates every PR as if it targets the stack base.' : ''),'ok','Published in the simulation only. No network request was made.');
     render();
   }
   function move(where) {
+    if (busy('gh stack ' + where)) return;
     const active = activeBranches();
     if (!active.length) {
       state.head = 'main';
@@ -255,6 +322,7 @@
     render();
   }
   function checkout(name) {
+    if (busy('gh stack checkout ' + name)) return;
     const branch = activeBranches().find(item => item.name === name);
     if (!branch) {
       addLog('gh stack checkout ' + name,'Branch not found among active branches in this demo.'); render(); return;
@@ -264,13 +332,29 @@
     explain('<strong>Checked out ' + escapeHtml(name) + '.</strong> HEAD moved, but the stack order and PR base relationships stayed the same.');
     render();
   }
-  function addCommit(branch) {
-    const msg = followUps[commitSeq++ % followUps.length];
-    branch.commits.push({sha:newSha(),msg,prev:null});
+  function addCommit(branch, conflicting = false) {
+    if (busy('git commit')) return;
+    const msg = conflicting ? conflictMsg : followUps[commitSeq++ % followUps.length];
+    const commit = {sha:newSha(),msg,prev:null};
+    if (conflicting) { commit.conflict = true; commit.file = conflictFile; }
+    branch.commits.push(commit);
     state.head = branch.name;
-    addLog('git commit -m "' + msg + '"','[' + branch.name + ' ' + branch.commits.at(-1).sha + '] ' + msg);
-    if (needsRebase()) explain('<strong>' + escapeHtml(branch.name) + ' gained a commit.</strong> Branches above it still start at its old tip, shown with dashed links in the commit graph. Run <code>gh stack rebase --upstack</code> to replay them on the new tip.', 'warn', 'The stack needs a rebase.');
-    else explain('<strong>Commit added to ' + escapeHtml(branch.name) + '.</strong> No branch sits above it, so nothing needs to be replayed.');
+    addLog('git commit -m "' + msg + '"','[' + branch.name + ' ' + commit.sha + '] ' + msg);
+    const above = activeBranches().length > activeBranches().indexOf(branch) + 1;
+    if (needsRebase()) explain('<strong>' + escapeHtml(branch.name) + ' gained a commit.</strong> Branches above it still start at its old tip, shown with dashed links in the commit graph. Run <code>gh stack rebase --upstack</code> to replay them on the new tip.' + (conflicting ? ' This commit edits <code>' + conflictFile + '</code>, which the branch above also edits, so replaying it will conflict.' : ''), 'warn', 'The stack needs a rebase.');
+    else explain('<strong>Commit added to ' + escapeHtml(branch.name) + '.</strong> ' + (above ? '' : 'No branch sits above it, so nothing needs to be replayed. ') + (branch.pr !== null ? 'Run <code>gh stack push</code> to update its PR; CI runs again on the new commit.' : ''));
+    render();
+  }
+  function addMainCommit(conflicting = false) {
+    if (busy('git commit')) return;
+    const msg = conflicting ? conflictMsg : mainFollowUps[mainSeq++ % mainFollowUps.length];
+    const commit = {sha:newSha(),msg,prev:null};
+    if (conflicting) { commit.conflict = true; commit.file = conflictFile; }
+    state.main.push(commit);
+    state.head = 'main';
+    addLog('git commit -m "' + msg + '"','[main ' + commit.sha + '] ' + msg);
+    if (needsRebase()) explain('<strong>Trunk moved ahead.</strong> <code>main</code> gained a commit, so the bottom branch still starts at an older main commit (dashed link). A stack loses its linear history when the trunk moves ahead. Run <code>gh stack rebase</code> to fetch the trunk and replay the stack, then <code>gh stack push</code> to update the PRs.' + (conflicting ? ' This commit edits <code>' + conflictFile + '</code>, which your stack also edits, so replaying it will conflict.' : ''), 'warn', 'The stack needs a rebase.');
+    else explain('<strong>Commit added to main.</strong> No stack branch is behind it.');
     render();
   }
   function addBottomCommit() {
@@ -279,35 +363,124 @@
     addCommit(bottom);
   }
   function commitOnHead() {
+    if (state.head === 'main') { addMainCommit(); return; }
     const branch = activeBranches().find(item => item.name === state.head);
-    if (!branch) { addLog('git commit','Check out a stack branch first; HEAD is on main.'); render(); return; }
+    if (!branch) { addLog('git commit','Check out a branch first.'); render(); return; }
     addCommit(branch);
   }
+  function conflictOnBottom() {
+    const bottom = activeBranches()[0];
+    if (!bottom) { addLog('git commit','There is no active stack branch to change.'); render(); return; }
+    addCommit(bottom, true);
+  }
+  function pauseRebase(command, snap, result) {
+    const {index, branchName, clash} = result.conflict;
+    state.rebase = {command, snap, index, branchName, clash, stage:0, replayed:result.replayed};
+    state.head = branchName;
+    addLog(command,'CONFLICT (exit code 3) while replaying ' + branchName + ': ' + clash.file + ' was also changed by "' + clash.msg + '". Rebase paused. Resolve the file, stage it with git add, then run gh stack rebase --continue, or run gh stack rebase --abort to restore every branch.');
+    explain('<strong>Rebase paused on a conflict.</strong> Replaying <code>' + escapeHtml(branchName) + '</code> changed the same lines in <code>' + escapeHtml(clash.file) + '</code> that "' + escapeHtml(clash.msg) + '" changed. Branches replayed before this point keep their new SHAs; the others are untouched until you continue.','warn','Rebase in progress. Other stack commands are blocked until you continue or abort.');
+    render();
+  }
+  function resolveConflict() {
+    const r = state.rebase;
+    if (!r || r.stage > 0) return;
+    r.stage = 1;
+    addLog('edit ' + r.clash.file,'Removed the conflict markers and kept the longer session TTL (simulated edit).');
+    explain('<strong>Conflict resolved in the file.</strong> Git does not know yet: stage it with <code>git add ' + escapeHtml(r.clash.file) + '</code>.','warn','Rebase still paused.');
+    render();
+  }
+  function stageConflict(command) {
+    const r = state.rebase;
+    if (!r) { addLog(command,'Nothing to stage: no rebase is paused.'); render(); return; }
+    if (r.stage === 0) { addLog(command, r.clash.file + ' still contains conflict markers. Edit the file first (Resolve in editor).'); render(); return; }
+    r.stage = 2;
+    addLog(command,'Staged ' + r.clash.file + '. Run gh stack rebase --continue.');
+    explain('<strong>File staged.</strong> Continue with <code>gh stack rebase --continue</code>.','ok','Ready to continue.');
+    render();
+  }
+  function continueRebase() {
+    const command = 'gh stack rebase --continue', r = state.rebase;
+    if (!r) { addLog(command,'No rebase is in progress.'); render(); return; }
+    if (r.stage < 2) { addLog(command, r.stage === 0 ? 'Conflict markers remain in ' + r.clash.file + '. Edit the file, then git add it.' : r.clash.file + ' is resolved but not staged. Run git add ' + r.clash.file + '.'); render(); return; }
+    state.rebase = null;
+    const result = replay(r.index, r.index);
+    const replayed = r.replayed.concat(result.replayed);
+    if (result.conflict) { pauseRebase(command, r.snap, {replayed, conflict:result.conflict}); return; }
+    addLog(command,'Rebase finished. Replayed ' + replayed.join(', ') + ' (new SHAs). Run gh stack push to update the PRs.');
+    explain('<strong>Rebase continued and finished.</strong> The conflicted branch and every branch above it were replayed onto the new parent. The rewritten commits show their old SHAs with a ↻ mark. The result is local until you run <code>gh stack push</code>, which re-runs CI on every branch whose commits changed.','ok','Conflict resolved. The stack is linear again.');
+    render();
+  }
+  function abortRebase() {
+    const command = 'gh stack rebase --abort', r = state.rebase;
+    if (!r) { addLog(command,'No rebase is in progress.'); render(); return; }
+    restore(r.snap);
+    state.rebase = null;
+    addLog(command,'Rebase aborted. Every branch was restored to its state before the rebase.');
+    explain('<strong>Rebase aborted.</strong> Nothing was changed, including branches that had already been replayed. The stack still needs a rebase, and it will hit the same conflict until you resolve it.','warn','The stack still needs a rebase.');
+    render();
+  }
   function rebaseStack(upstack=false) {
+    if (busy('gh stack rebase')) return;
     const active = activeBranches();
     if (!active.length) { addLog('gh stack rebase','There is no active stack to rebase.'); render(); return; }
     const current = currentIndex();
     const start = upstack && current >= 0 ? current : 0;
-    const replayed = replay(start);
     const command = upstack ? 'gh stack rebase --upstack' : 'gh stack rebase';
-    addLog(command, replayed.length ? 'Fetched from the remote and replayed ' + replayed.join(', ') + ' onto the updated parent history. Replayed commits got new SHAs (simulated).' : 'Fetched from the remote. Every branch already starts at its parent tip, so nothing was replayed (simulated).');
+    const snap = snapshot();
+    const result = replay(start);
+    if (result.conflict) { pauseRebase(command, snap, result); return; }
+    const replayed = result.replayed;
+    addLog(command, replayed.length ? 'Fetched from the remote and replayed ' + replayed.join(', ') + ' onto the updated parent history. Replayed commits got new SHAs (simulated). Run gh stack push to update the PRs.' : 'Fetched from the remote. Every branch already starts at its parent tip, so nothing was replayed (simulated).');
     if (!replayed.length) { explain('<strong>Already up to date.</strong> Each branch starts at the tip of its parent, so no commits were replayed.'); render(); return; }
-    explain('<strong>Cascading rebase complete.</strong> The branches that were behind their parent, and every branch above them, were replayed in dependency order. Their commits have new SHAs (see the \u21bb marks in the graph). Merged parents are skipped so the first remaining layer is based on the next unmerged ancestor. In a real repository, a conflict may pause the rebase until you resolve it.','ok','The active stack is synchronized in this simulation.');
+    explain('<strong>Cascading rebase complete.</strong> The branches that were behind their parent, and every branch above them, were replayed in dependency order. Their commits have new SHAs (see the \u21bb marks in the graph). Merged parents are skipped so the first remaining layer is based on the next unmerged ancestor. In a real repository, a conflict may pause the rebase until you resolve it.','ok','Rebase is local only. Run gh stack push to update the PRs; CI re-runs on every branch whose commits changed.');
     render();
   }
-  function mergeThrough(pr) {
+  function landOnMain(branch, method) {
+    const base = {prev:null,pr:branch.pr,color:branch.color};
+    if (method === 'merge') {
+      branch.commits.forEach(commit => state.main.push({...base,sha:commit.sha,msg:commit.msg}));
+      state.main.push({...base,sha:newSha(),msg:'Merge pull request #' + branch.pr + ' from ' + branch.name,mergeOf:branch.commits.at(-1).sha,landing:true});
+    } else if (method === 'rebase') {
+      branch.commits.forEach((commit,j) => state.main.push({...base,sha:newSha(),msg:commit.msg,prev:commit.sha,landing:j === branch.commits.length - 1}));
+    } else {
+      state.main.push({...base,sha:newSha(),msg:branch.title + ' (#' + branch.pr + ')',landing:true});
+    }
+  }
+  function afterMerge(method) {
+    const how = {
+      squash:'Each merged PR landed on main as one new squash commit (simulated), so the original commits are no longer on main.',
+      merge:'Each merged PR landed on main as a merge commit that keeps its original commits (simulated).',
+      rebase:'Each merged PR landed on main as replayed copies of its commits with new SHAs (simulated), so the original commits are no longer on main.'
+    }[method];
+    return needsRebase()
+      ? 'Higher layers remain open. ' + how + ' They still build on the old commits (dashed links in the graph). GitHub rebases the remaining PRs on its side when the bottom PR merges; run <code>gh stack sync</code> locally to catch up.'
+      : 'Higher layers remain open. ' + how + ' They already build on commits that exist on main, so there is nothing to replay. Run <code>gh stack sync</code> to update local main.';
+  }
+  function mergeThrough(pr, method = state.mergeMethod) {
+    if (busy('gh stack merge ' + pr)) return;
     const target = state.branches.findIndex(branch => branch.pr === Number(pr) && !branch.merged);
     if (target < 0) { addLog('gh stack merge ' + pr,'No unmerged PR with that number exists in the current stack. Submit the stack first.'); render(); return; }
-    const selected = state.branches[target];
+    const stack = activeBranches();
+    const through = stack.filter(branch => state.branches.indexOf(branch) <= target);
+    const unchecked = through.filter(branch => branch.ciSha !== branch.commits.at(-1).sha);
+    const blocked = through.some((_,i) => staleInfo(stack,i))
+      ? 'the stack no longer has a linear history (a branch is behind its parent). Run gh stack rebase, then gh stack push.'
+      : unchecked.length ? 'required checks have not run on the latest commits of ' + unchecked.map(branch => branch.name).join(', ') + '. Run gh stack push.' : '';
+    if (blocked) {
+      addLog('gh stack merge ' + pr + ' --' + method,'Merge blocked: ' + blocked);
+      explain('<strong>Merge blocked.</strong> GitHub checks every PR from the bottom up to PR #' + escapeHtml(pr) + ' against the rules for the stack base, and ' + escapeHtml(blocked),'warn','All-or-nothing: if any PR in the merge set cannot merge, none do.');
+      render(); return;
+    }
     const mergedNow = [];
     for (let i = 0; i <= target; i++) {
       const branch = state.branches[i];
-      if (!branch.merged) { branch.merged = true; state.merged.push(branch.name); mergedNow.push('PR #' + branch.pr); state.main.push({sha:newSha(),msg:branch.title + ' (#' + branch.pr + ')',prev:null,pr:branch.pr,color:branch.color}); }
+      if (!branch.merged) { branch.merged = true; state.merged.push(branch.name); mergedNow.push('PR #' + branch.pr); landOnMain(branch,method); }
     }
     const active = activeBranches();
+    if (active.length) active[0].baseBranch = 'main';
     state.head = active.length ? active.at(-1).name : 'main';
-    addLog('gh stack merge ' + pr,'Merged ' + (mergedNow.length ? mergedNow.join(', ') : 'no additional PRs') + ' through PR #' + pr + '.');
-    explain('<strong>Stack merge simulated through PR #' + escapeHtml(pr) + '.</strong> Its unmerged dependencies below it were included. ' + (active.length ? 'Higher layers remain open. Each merged PR landed on main as a new squash commit (simulated), so higher layers still build on the old commits, shown with dashed links in the graph. Run <code>gh stack rebase</code> or <code>gh stack sync</code> to replay them onto main.' : 'All layers have landed; the stack is complete.'),'ok','The merge was simulated only. No pull requests or repository branches were changed.');
+    addLog('gh stack merge ' + pr + ' --' + method,'Merged ' + (mergedNow.length ? mergedNow.join(', ') : 'no additional PRs') + ' through PR #' + pr + '.');
+    explain('<strong>Stack merge simulated through PR #' + escapeHtml(pr) + '.</strong> Its unmerged dependencies below it were included. ' + (active.length ? afterMerge(method) : 'All layers have landed; the stack is complete.'),'ok','The merge was simulated only. No pull requests or repository branches were changed.');
     render();
   }
   function renderCommitGraph() {
@@ -357,7 +530,9 @@
       const name = branch ? branch.name : 'main';
       if (row.tip) pills.push(onHead ? ['HEAD \u2192 ' + name,'#0969da','#fff'] : [name,fill,'#fff']);
       if (branch && row.tip && branch.pr) pills.push(['PR #' + branch.pr,'#dafbe1','#1a7f37','#82c99a']);
-      if (!branch && commit.pr) pills.push(['merged \u00b7 PR #' + commit.pr,'#dafbe1','#1a7f37','#82c99a']);
+      if (branch && row.tip && branch.pr !== null) pills.push(branch.ciSha === commit.sha ? ['CI \u2713','#dafbe1','#1a7f37','#82c99a'] : ['CI not run','#f6f8fa','#656d76','#d1d9e0']);
+      if (!branch && commit.landing) pills.push(['merged \u00b7 PR #' + commit.pr,'#dafbe1','#1a7f37','#82c99a']);
+      if (commit.conflict) pills.push(['\u26a1 edits ' + commit.file.split('/').pop(),'#ffebe9','#cf222e','#ff8182']);
       if (branch && row.tip && staleInfo(active,active.indexOf(branch))) pills.push(['\u26a0 rebase needed','#fff8c5','#9a6700','#d4a72c']);
       pills.forEach(([label,bg,fg,stroke]) => {
         const w = label.length * 6.2 + 12;
@@ -374,6 +549,31 @@
     svg.innerHTML = bands + lines + nodes + text;
     $('cg-meta').textContent = active.reduce((sum,branch) => sum + branch.commits.length,0) + ' commit(s) on ' + active.length + ' active branch(es) \u00b7 ' + state.main.length + ' on main \u00b7 newest first';
   }
+  function renderConflict() {
+    const r = state.rebase;
+    $('conflict').style.display = r ? 'block' : 'none';
+    if (!r) return;
+    const active = activeBranches();
+    const parentName = r.index === 0 ? 'main' : active[r.index - 1].name;
+    const first = active[r.index].commits[0];
+    $('cf-title').textContent = 'Rebase paused: conflict while replaying ' + r.branchName + ' onto ' + parentName;
+    $('cf-sub').textContent = r.clash.file + ' was changed by "' + r.clash.msg + '" and by "' + first.msg + '".';
+    $('cf-stage').textContent = ['UNRESOLVED','RESOLVED · NOT STAGED','STAGED · READY TO CONTINUE'][r.stage];
+    const lines = r.stage === 0
+      ? ['export function createSession() {','<<<<<<< ' + parentName + ' (' + r.clash.sha + ')','  const SESSION_TTL = 30 * 60;','=======','  const SESSION_TTL = 15 * 60;','>>>>>>> ' + r.branchName + ' (' + first.sha + ')','  return sign(SESSION_TTL);','}']
+      : ['export function createSession() {','  const SESSION_TTL = 30 * 60; // keeps the longer TTL','  return sign(SESSION_TTL);','}'];
+    let part = '';
+    const body = lines.map(line => {
+      if (line.startsWith('<<<<<<<')) { part = 'cfo'; return '<span class="cfm">' + escapeHtml(line) + '</span>'; }
+      if (line.startsWith('=======')) { part = 'cft'; return '<span class="cfm">' + escapeHtml(line) + '</span>'; }
+      if (line.startsWith('>>>>>>>')) { part = ''; return '<span class="cfm">' + escapeHtml(line) + '</span>'; }
+      return part ? '<span class="' + part + '">' + escapeHtml(line) + '</span>' : escapeHtml(line);
+    });
+    $('cf-file').innerHTML = '<span class="cfh">' + escapeHtml(r.clash.file) + '</span>\n' + body.join('\n');
+    $('cf-resolve').disabled = r.stage > 0;
+    $('cf-add').disabled = r.stage !== 1;
+    $('cf-continue').disabled = r.stage < 2;
+  }
   function renderGraph() {
     const graph = $('graph');
     const reversed = state.branches.slice().reverse();
@@ -386,37 +586,44 @@
       html += '<button type="button" class="branch ' + (selected ? 'selected ' : '') + (branch.merged ? 'merged' : '') + '" data-branch="' + escapeHtml(branch.name) + '" ' + (branch.merged ? 'disabled' : '') + '>' +
         '<div class="branchtop"><span class="branchname"><i class="branchdot" style="background:' + branch.color + '"></i>' + escapeHtml(branch.name) + '</span><span class="status">' + (selected ? '● HEAD' : status) + '</span></div>' +
         '<div class="branchmeta">' + escapeHtml(branch.title) + ' · base: ' + escapeHtml(baseFor(branch)) + '</div>' +
-        '<div class="branchmeta">' + branch.commits.length + ' commit(s) · ' + branch.files + ' changed files' + (branch.rebaseCount ? ' · ' + branch.rebaseCount + ' rebase(s)' : '') + (branch.merged ? '' : staleText(act,branch)) + '</div></button>';
+        '<div class="branchmeta">' + branch.commits.length + ' commit(s) · ' + branch.files + ' changed files' + (branch.rebaseCount ? ' · ' + branch.rebaseCount + ' rebase(s)' : '') + (branch.merged ? '' : ciText(branch) + staleText(act,branch)) + '</div></button>';
     });
     if (reversed.length) html += '<div class="connector"><span>↓</span></div>';
     html += '<div class="branch trunk"><div class="branchtop"><span class="branchname">◉ main</span><span class="status">TRUNK</span></div><div class="branchmeta">Base branch · starting point</div></div>';
     graph.innerHTML = html;
     const active = activeBranches();
-    $('stack-status').textContent = !state.branches.length ? 'NO ACTIVE STACK' : needsRebase() ? 'REBASE NEEDED' : active.length ? (active.some(b => b.pr === null) ? 'LOCAL · CHANGES PENDING' : 'PUBLISHED · ' + active.length + ' OPEN') : 'STACK MERGED';
+    $('stack-status').textContent = !state.branches.length ? 'NO ACTIVE STACK' : state.rebase ? 'REBASE PAUSED · CONFLICT' : needsRebase() ? 'REBASE NEEDED' : active.length ? (active.some(b => b.pr === null) ? 'LOCAL · CHANGES PENDING' : unpushed() ? 'PUSH NEEDED' : 'PUBLISHED · ' + active.length + ' OPEN') : 'STACK MERGED';
     $('head').innerHTML = 'HEAD → <strong>' + escapeHtml(state.head) + '</strong> ' + (state.head === 'main' ? '· trunk' : '· checked out');
     $('graph-hint').textContent = state.branches.length ? 'Select an active branch to check it out. Merged layers are retained in the graph for context.' : 'Run gh stack init feature-auth to create the first branch.';
     $('stat-branches').textContent = active.length;
     $('stat-prs').textContent = active.filter(b => b.pr !== null).length;
     $('stat-merged').textContent = state.merged.length;
+    $('stat-ci').textContent = state.ciRuns;
     $('op-count').textContent = state.operations + ' operations';
     $('log').innerHTML = state.logs.length ? state.logs.map(entry => '<div><div class="cmd">$ ' + escapeHtml(entry.command) + '</div><div class="out">' + escapeHtml(entry.output) + '</div></div>').join('') : '<div class="out">Welcome. Try: gh stack init feature-auth</div>';
     $('log').scrollTop = $('log').scrollHeight;
 
-    $('init').disabled = state.branches.length > 0;
-    $('add-api').disabled = !active.length || active.length !== 1 || state.head !== active.at(-1).name || state.branches.some(b => b.name === 'feature-api');
-    $('add-ui').disabled = active.length < 2 || active.length !== 2 || state.head !== active.at(-1).name || state.branches.some(b => b.name === 'feature-ui');
-    $('submit').disabled = !active.length || !active.some(b => b.pr === null) || needsRebase();
-    $('add-commit').disabled = !active.length;
-    $('commit-head').disabled = !active.some(b => b.name === state.head);
-    $('rebase').disabled = !active.length;
-    $('rebase-note').style.display = needsRebase() ? 'block' : 'none';
+    const paused = Boolean(state.rebase);
+    $('init').disabled = state.branches.length > 0 || paused;
+    $('add-api').disabled = paused || !active.length || active.length !== 1 || state.head !== active.at(-1).name || state.branches.some(b => b.name === 'feature-api');
+    $('add-ui').disabled = paused || active.length < 2 || active.length !== 2 || state.head !== active.at(-1).name || state.branches.some(b => b.name === 'feature-ui');
+    $('submit').disabled = paused || !active.length || needsRebase() || !(active.some(b => b.pr === null) || unpushed());
+    $('add-commit').disabled = paused || !active.length;
+    $('commit-head').disabled = paused;
+    $('commit-main').disabled = paused;
+    $('conflict-main').disabled = paused || !active.length;
+    $('conflict-bottom').disabled = paused || active.length < 2;
+    $('rebase').disabled = paused || !active.length;
+    $('merge-method').value = state.mergeMethod;
+    $('rebase-note').style.display = needsRebase() && !paused ? 'block' : 'none';
     renderCommitGraph();
+    renderConflict();
     $('steps').querySelectorAll('.step').forEach((element,index) => element.classList.toggle('active',index === state.selectedStep));
 
     const openPrs = active.filter(branch => branch.pr !== null);
     $('merge-select').innerHTML = openPrs.length ? openPrs.map(branch => '<option value="' + branch.pr + '">Merge through PR #' + branch.pr + ' — ' + escapeHtml(branch.name) + '</option>').join('') : '<option value="">' + (active.length ? 'Submit the stack first' : 'No unmerged PRs') + '</option>';
-    $('merge-select').disabled = !openPrs.length;
-    $('merge').disabled = !openPrs.length;
+    $('merge-select').disabled = !openPrs.length || paused;
+    $('merge').disabled = !openPrs.length || paused;
   }
   const commandList = [
     ['gh stack init feature-auth feature-api feature-ui','Initialize the stack and create a chain of branches in one command.'],
@@ -426,8 +633,13 @@
     ['gh stack up','Move one layer away from the trunk.'],
     ['gh stack down','Move one layer toward the trunk.'],
     ['gh stack rebase --upstack','Replay the branches above the current one onto its new tip.'],
+    ['gh stack rebase','Fetch the trunk and replay the whole stack from the trunk upward.'],
+    ['gh stack rebase --continue','Continue a paused rebase after resolving conflicts and staging with git add.'],
+    ['gh stack rebase --abort','Restore every branch to its state before the rebase.'],
+    ['gh stack push','Push active branches. CI runs again on each PR whose tip changed.'],
+    ['git commit','Commit on the checked-out branch, including main.'],
     ['gh stack sync','Fetch, reconcile, rebase, push, and sync PR state.'],
-    ['gh stack merge 2','Merge PR #2 and every unmerged PR below it.'],
+    ['gh stack merge 2 --squash','Merge PR #2 and every unmerged PR below it. Also --merge or --rebase.'],
     ['gh stack checkout feature-api','Check out a branch in the stack.']
   ];
   $('command-list').innerHTML = commandList.map(([command,description]) => '<div class="command"><div><code>' + escapeHtml(command) + '</code><p>' + escapeHtml(description) + '</p></div><button type="button" class="try" data-try="' + escapeHtml(command) + '">Try</button></div>').join('');
@@ -437,6 +649,7 @@
     if (!command) return;
     const parts = command.split(' ');
     if (parts[0] === 'git' && parts[1] === 'commit') { commitOnHead(); return; }
+    if (parts[0] === 'git' && parts[1] === 'add') { stageConflict(command); return; }
     if (parts[0] !== 'gh' || parts[1] !== 'stack') {
       addLog(command,'This playground simulates gh stack commands and git commit. Try: gh stack view --short'); render(); return;
     }
@@ -461,28 +674,52 @@
     } else if (['up','down','top','bottom','trunk'].includes(subcommand)) {
       move(subcommand);
     } else if (subcommand === 'rebase') {
-      rebaseStack(parts.includes('--upstack'));
+      if (parts.includes('--continue')) continueRebase();
+      else if (parts.includes('--abort')) abortRebase();
+      else rebaseStack(parts.includes('--upstack'));
     } else if (subcommand === 'merge') {
-      const pr = Number((parts[3] || '').replace('#',''));
-      if (pr) mergeThrough(pr);
-      else { addLog(command,'For this simulator, provide a PR number, for example: gh stack merge 2.'); render(); }
+      let method = state.mergeMethod;
+      const rest = [], args = parts.slice(3);
+      for (let i = 0; i < args.length; i++) {
+        if (['--squash','--merge','--rebase'].includes(args[i])) method = args[i].slice(2);
+        else if (args[i] === '--merge-method') method = args[++i] || '';
+        else if (args[i] !== '-y' && args[i] !== '--yes') rest.push(args[i]);
+      }
+      const pr = Number((rest[0] || '').replace('#',''));
+      if (!['squash','merge','rebase'].includes(method)) { addLog(command,'Merge method must be merge, squash, or rebase.'); render(); }
+      else if (pr) mergeThrough(pr, method);
+      else { addLog(command,'For this simulator, provide a PR number, for example: gh stack merge 2 --squash.'); render(); }
     } else if (subcommand === 'checkout') {
       const target = parts[3] || '';
       checkout(target);
     } else if (subcommand === 'push') {
+      if (busy(command)) return;
       if (!activeBranches().length) addLog(command,'There are no active branches to push.');
-      else addLog(command,'Pushed all active stack branches (simulated). Push does not create or update pull requests.');
+      else {
+        const runs = pushActive();
+        addLog(command,'Pushed all active stack branches atomically (simulated). ' + (runs.length ? 'CI started on ' + runs.join(', ') + ' because their tips changed. ' : '') + 'Push does not create or update pull requests.');
+      }
       explain('<strong>Push only.</strong> <code>gh stack push</code> pushes active branches. Use <code>gh stack submit</code> to create or update PRs and link the Stack.');
       render();
     } else if (subcommand === 'sync') {
+      if (busy(command)) return;
       const active = activeBranches();
       if (!active.length) { addLog(command,'There is no active stack to sync.'); render(); return; }
-      const replayed = replay(0);
-      addLog(command,'Fetched and reconciled remote state, ' + (replayed.length ? 'replayed ' + replayed.join(', ') + ' with new SHAs' : 'found nothing to replay') + ', pushed active branches, and refreshed PR/Stack state. No new PRs were created.');
+      const snap = snapshot();
+      const result = replay(0);
+      if (result.conflict) {
+        restore(snap);
+        addLog(command,'Conflict while replaying ' + result.conflict.branchName + ' (exit code 3). All branches were restored to their original state. Run gh stack rebase to resolve the conflict interactively.');
+        explain('<strong>Sync stopped on a conflict.</strong> Unlike <code>gh stack rebase</code>, <code>sync</code> does not pause: it restores every branch and asks you to run <code>gh stack rebase</code> to resolve the conflict.','warn','Nothing was pushed.');
+        render(); return;
+      }
+      const replayed = result.replayed;
+      const runs = pushActive();
+      addLog(command,'Fetched and reconciled remote state, ' + (replayed.length ? 'replayed ' + replayed.join(', ') + ' with new SHAs' : 'found nothing to replay') + ', pushed active branches' + (runs.length ? ' (CI started on ' + runs.join(', ') + ')' : '') + ', and refreshed PR/Stack state. No new PRs were created.');
       explain('<strong>Stack synced.</strong> <code>gh stack sync</code> reconciles the local stack with GitHub, rebases when needed, pushes active branches, and refreshes PR state. It does not create PRs; use <code>gh stack submit</code> for that.','ok','The simulated stack is synchronized.');
       render();
     } else if (subcommand === 'help') {
-      addLog(command,'Available in this demo: init, add, submit, view, checkout, up, down, top, bottom, trunk, rebase, push, sync, merge, plus git commit.'); render();
+      addLog(command,'Available in this demo: init, add, submit, view, checkout, up, down, top, bottom, trunk, rebase (--upstack, --continue, --abort), push, sync, merge (--squash, --merge, --rebase), plus git commit and git add.'); render();
     } else {
       addLog(command,'That command is not implemented in this learning simulation. Try gh stack help.'); render();
     }
@@ -503,7 +740,7 @@
     if (!button || !app.contains(button)) return;
     if (button.dataset.tab) { setTab(button.dataset.tab); return; }
     if (button.dataset.action === 'reset') {
-      state.branches = []; state.main = freshMain(); commitSeq = 0; state.head = 'main'; state.nextPr = 1; state.merged = []; state.logs = []; state.operations = 0; state.selectedStep = 0;
+      state.branches = []; state.main = freshMain(); commitSeq = 0; mainSeq = 0; state.rebase = null; state.ciRuns = 0; state.head = 'main'; state.nextPr = 1; state.merged = []; state.logs = []; state.operations = 0; state.selectedStep = 0;
       explain('Start with <strong>main</strong>. Initialize the stack with <code>gh stack init feature-auth</code>. This creates the bottom branch on top of trunk.');
       render(); return;
     }
@@ -513,6 +750,14 @@
     if (button.id === 'submit') { submitStack(); return; }
     if (button.id === 'add-commit') { addBottomCommit(); return; }
     if (button.id === 'commit-head') { commitOnHead(); return; }
+    if (button.id === 'commit-main') { addMainCommit(); return; }
+    if (button.id === 'conflict-main') { addMainCommit(true); return; }
+    if (button.id === 'conflict-bottom') { conflictOnBottom(); return; }
+    if (button.id === 'cf-resolve') { resolveConflict(); return; }
+    if (button.id === 'cf-add') { stageConflict('git add ' + (state.rebase ? state.rebase.clash.file : '')); return; }
+    if (button.id === 'cf-continue') { continueRebase(); return; }
+    if (button.id === 'cf-abort') { abortRebase(); return; }
+    if (button.dataset.run) { runCommand(button.dataset.run); return; }
     if (button.id === 'rebase') { rebaseStack(true); return; }
     if (button.id === 'merge') { mergeThrough($('merge-select').value); return; }
     if (button.dataset.nav) { move(button.dataset.nav); return; }
@@ -531,6 +776,7 @@
     runCommand(command);
   });
   $('merge-select').addEventListener('change',() => {});
+  $('merge-method').addEventListener('change',event => { state.mergeMethod = event.target.value; });
 
   render();
 })();
