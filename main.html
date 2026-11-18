@@ -6,7 +6,7 @@
 <title>gh stack — Interactive Learning Lab</title>
 <style>
 :root{color-scheme:light;--bg:#f6f8fa;--surface:#fff;--surface2:#f6f8fa;--text:#1f2328;--muted:#656d76;--border:#d1d9e0;--blue:#0969da;--bluebg:#ddf4ff;--green:#1a7f37;--greenbg:#dafbe1;--purple:#8250df;--amber:#9a6700;--amberbg:#fff8c5;--red:#cf222e;--shadow:0 1px 2px #1f23280d}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.shell{max-width:1160px;margin:0 auto;padding:28px 20px 52px}.eyebrow{display:flex;gap:8px;align-items:center;font-size:11px;font-weight:750;letter-spacing:.12em;color:var(--muted)}.green-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}h1{font-size:30px;line-height:1.15;letter-spacing:-.04em;margin:10px 0 7px}.intro{color:var(--muted);max-width:760px;margin:0 0 22px}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 14px}.tab{border:1px solid var(--border);border-radius:9px;background:var(--surface);padding:9px 13px;font-weight:650;font-size:12px;color:var(--text)}.tab.active{border-color:var(--blue);background:var(--bluebg);color:#0550ae}.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;box-shadow:var(--shadow);min-width:0}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.cardhead h2,.card h2{font-size:14px;margin:0;font-weight:750}.muted{color:var(--muted)}.tiny{font-size:11px}.lesson{margin-bottom:14px}.lesson-desc{color:var(--muted);margin:5px 0 14px}.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.step{border:1px solid var(--border);border-radius:9px;padding:10px;text-align:left;background:var(--surface);min-width:0}.step.active{border-color:var(--blue);background:#f0f6ff}.step .number{font-size:10px;color:var(--muted)}.step b{display:block;font-size:12px;margin:4px 0}.step small{display:block;color:var(--muted);font-size:10px;line-height:1.35}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:8px 11px;font-weight:650;font-size:12px;color:var(--text)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.success{color:var(--green);border-color:#82c99a}.btn:hover:not(:disabled),.tab:hover{filter:brightness(.97)}.grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:14px;margin-top:14px;align-items:start}.workbench{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:16px;align-items:start}.graphwrap{overflow:auto;max-height:600px;border:1px solid var(--border);border-radius:9px;background:#fff}.cg{display:block}.legend{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:10px;color:var(--muted);margin-top:9px;line-height:1.5}.legend i{display:inline-block;width:14px;height:0;border-top:2px solid #8c959f;vertical-align:middle;margin-right:5px}.legend i.dash{border-top:2px dashed #bf8700}.branch-graph{display:flex;flex-direction:column;align-items:stretch;padding:12px 6px 4px}.branch{width:100%;border:1px solid var(--border);border-radius:9px;padding:10px 12px;background:#fff;text-align:left;margin:0;color:var(--text)}.branch.selected{border:2px solid var(--blue);padding:9px 11px;box-shadow:0 0 0 2px #ddf4ff}.branch.merged{background:#f0fff4;border-color:#82c99a;cursor:default}.branch.trunk{border-style:dashed;background:var(--surface2);cursor:default}.branchtop{display:flex;align-items:center;justify-content:space-between;gap:8px}.branchname{font-weight:750;font-size:12px;overflow-wrap:anywhere}.branchmeta{font-size:10px;color:var(--muted);margin-top:4px}.branchdot{display:inline-block;width:8px;height:8px;border-radius:3px;margin-right:7px}.connector{height:27px;display:flex;align-items:center;justify-content:center;color:#8c959f;position:relative}.connector:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--border)}.connector span{position:relative;background:var(--surface);padding:0 7px}.stackinfo{padding:9px;border-radius:8px;background:var(--surface2);font-size:11px;margin-top:10px}.explain{font-size:12px;line-height:1.65}.explain strong{font-weight:750}.callout{padding:10px;border-radius:8px;font-size:11px;margin-top:9px}.callout.warn{background:var(--amberbg);border:1px solid #d4a72c}.callout.ok{background:var(--greenbg);border:1px solid #82c99a}.terminal{background:#0d1117;border:1px solid #30363d;border-radius:10px;padding:13px;color:#e6edf3;min-height:218px;display:flex;flex-direction:column}.termhead{font-size:10px;color:#8b949e;display:flex;justify-content:space-between;margin-bottom:10px}.log{font:11px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-y:auto;max-height:180px;display:flex;flex-direction:column;gap:7px;white-space:pre-wrap;overflow-wrap:anywhere}.log .cmd{color:#79c0ff}.log .out{color:#c9d1d9}.cmdrow{display:flex;gap:7px;margin-top:auto;padding-top:10px}.cmdrow input{min-width:0;flex:1;background:#161b22;border:1px solid #30363d;color:#e6edf3;border-radius:7px;padding:9px;font:11px ui-monospace,monospace}.cmdrow button{background:#238636;color:white;border:0;border-radius:7px;padding:8px 12px;font-size:11px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:14px}.stat{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:10px}.stat b{display:block;font-size:18px}.stat span{font-size:10px;color:var(--muted)}.commandlist{display:grid;grid-template-columns:1fr 1fr;gap:8px}.command{border:1px solid var(--border);border-radius:9px;padding:10px;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.command code{font-size:11px;overflow-wrap:anywhere}.command p{margin:4px 0 0;font-size:10px;color:var(--muted)}.try{padding:5px 8px;font-size:10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);white-space:nowrap}.tabcontent{display:none}.tabcontent.active{display:block}.navactions{display:flex;gap:7px;flex-wrap:wrap}.select{border:1px solid var(--border);border-radius:7px;padding:9px;background:#fff;min-width:240px;max-width:100%}.footer{font-size:10px;color:var(--muted);margin-top:16px;line-height:1.6}.footer a{color:var(--blue)}code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 4px;font-size:.92em}.hint{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5}.status{border:1px solid var(--border);border-radius:99px;padding:3px 8px;font-size:10px;font-weight:700;white-space:nowrap}.lower-note{font-size:11px;color:var(--muted);line-height:1.6;margin-top:8px}.conflict{border-color:#d4a72c;background:#fffdf0}.cfile{margin:0;background:#0d1117;color:#e6edf3;border-radius:9px;padding:12px;font:11px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;overflow:auto;white-space:pre}.cfile .cfh{color:#8b949e}.cfile .cfm{color:#ff7b72;font-weight:700}.cfile .cfo{color:#7ee787}.cfile .cft{color:#79c0ff}.cfsteps{margin:0;padding-left:18px;font-size:12px;line-height:1.7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.shell{max-width:1160px;margin:0 auto;padding:28px 20px 52px}.eyebrow{display:flex;gap:8px;align-items:center;font-size:11px;font-weight:750;letter-spacing:.12em;color:var(--muted)}.green-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}h1{font-size:30px;line-height:1.15;letter-spacing:-.04em;margin:10px 0 7px}.intro{color:var(--muted);max-width:760px;margin:0 0 22px}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 14px}.tab{border:1px solid var(--border);border-radius:9px;background:var(--surface);padding:9px 13px;font-weight:650;font-size:12px;color:var(--text)}.tab.active{border-color:var(--blue);background:var(--bluebg);color:#0550ae}.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;box-shadow:var(--shadow);min-width:0}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.cardhead h2,.card h2{font-size:14px;margin:0;font-weight:750}.muted{color:var(--muted)}.tiny{font-size:11px}.lesson{margin-bottom:14px}.lesson-desc{color:var(--muted);margin:5px 0 14px}.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.step{border:1px solid var(--border);border-radius:9px;padding:10px;text-align:left;background:var(--surface);min-width:0}.step.active{border-color:var(--blue);background:#f0f6ff}.step .number{font-size:10px;color:var(--muted)}.step b{display:block;font-size:12px;margin:4px 0}.step small{display:block;color:var(--muted);font-size:10px;line-height:1.35}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:8px 11px;font-weight:650;font-size:12px;color:var(--text)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.success{color:var(--green);border-color:#82c99a}.btn:hover:not(:disabled),.tab:hover{filter:brightness(.97)}.grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:14px;margin-top:14px;align-items:start}.workbench{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:16px;align-items:start}.graphwrap{overflow:auto;max-height:600px;border:1px solid var(--border);border-radius:9px;background:#fff}.cg{display:block}.legend{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:10px;color:var(--muted);margin-top:9px;line-height:1.5}.legend i{display:inline-block;width:14px;height:0;border-top:2px solid #8c959f;vertical-align:middle;margin-right:5px}.legend i.dash{border-top:2px dashed #bf8700}.branch-graph{display:flex;flex-direction:column;align-items:stretch;padding:12px 6px 4px}.branch{width:100%;border:1px solid var(--border);border-radius:9px;padding:10px 12px;background:#fff;text-align:left;margin:0;color:var(--text)}.branch.selected{border:2px solid var(--blue);padding:9px 11px;box-shadow:0 0 0 2px #ddf4ff}.branch.merged{background:#f0fff4;border-color:#82c99a;cursor:default}.branch.trunk{border-style:dashed;background:var(--surface2);cursor:default}.branchtop{display:flex;align-items:center;justify-content:space-between;gap:8px}.branchname{font-weight:750;font-size:12px;overflow-wrap:anywhere}.branchmeta{font-size:10px;color:var(--muted);margin-top:4px}.branchdot{display:inline-block;width:8px;height:8px;border-radius:3px;margin-right:7px}.connector{height:27px;display:flex;align-items:center;justify-content:center;color:#8c959f;position:relative}.connector:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--border)}.connector span{position:relative;background:var(--surface);padding:0 7px}.stackinfo{padding:9px;border-radius:8px;background:var(--surface2);font-size:11px;margin-top:10px}.explain{font-size:12px;line-height:1.65}.explain strong{font-weight:750}.callout{padding:10px;border-radius:8px;font-size:11px;margin-top:9px}.callout.warn{background:var(--amberbg);border:1px solid #d4a72c}.callout.ok{background:var(--greenbg);border:1px solid #82c99a}.terminal{background:#0d1117;border:1px solid #30363d;border-radius:10px;padding:13px;color:#e6edf3;min-height:218px;display:flex;flex-direction:column}.termhead{font-size:10px;color:#8b949e;display:flex;justify-content:space-between;margin-bottom:10px}.log{font:11px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-y:auto;max-height:180px;display:flex;flex-direction:column;gap:7px;white-space:pre-wrap;overflow-wrap:anywhere}.log .cmd{color:#79c0ff}.log .out{color:#c9d1d9}.cmdrow{display:flex;gap:7px;margin-top:auto;padding-top:10px}.cmdrow input{min-width:0;flex:1;background:#161b22;border:1px solid #30363d;color:#e6edf3;border-radius:7px;padding:9px;font:11px ui-monospace,monospace}.cmdrow button{background:#238636;color:white;border:0;border-radius:7px;padding:8px 12px;font-size:11px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:14px}.stat{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:10px}.stat b{display:block;font-size:18px}.stat span{font-size:10px;color:var(--muted)}.commandlist{display:grid;grid-template-columns:1fr 1fr;gap:8px}.command{border:1px solid var(--border);border-radius:9px;padding:10px;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.command code{font-size:11px;overflow-wrap:anywhere}.command p{margin:4px 0 0;font-size:10px;color:var(--muted)}.try{padding:5px 8px;font-size:10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);white-space:nowrap}.tabcontent{display:none}.tabcontent.active{display:block}.navactions{display:flex;gap:7px;flex-wrap:wrap}.select{border:1px solid var(--border);border-radius:7px;padding:9px;background:#fff;min-width:240px;max-width:100%}.footer{font-size:10px;color:var(--muted);margin-top:16px;line-height:1.6}.footer a{color:var(--blue)}code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 4px;font-size:.92em}.hint{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5}.status{border:1px solid var(--border);border-radius:99px;padding:3px 8px;font-size:10px;font-weight:700;white-space:nowrap}.lower-note{font-size:11px;color:var(--muted);line-height:1.6;margin-top:8px}.conflict{border-color:#d4a72c;background:#fffdf0}.cfile{margin:0;background:#0d1117;color:#e6edf3;border-radius:9px;padding:12px;font:11px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;overflow:auto;white-space:pre}.cfile .cfh{color:#8b949e}.cfile .cfm{color:#ff7b72;font-weight:700}.cfile .cfo{color:#7ee787}.cfile .cft{color:#79c0ff}.cfsteps{margin:0;padding-left:18px;font-size:12px;line-height:1.7}.stab{border:1px solid var(--border);border-radius:8px;background:var(--surface);padding:6px 10px;font-weight:650;font-size:11px;color:var(--text)}.stab.active{border-color:var(--blue);background:var(--bluebg);color:#0550ae}.dtabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.diffsum{font-size:12px;margin:2px 0 6px}.plus{color:var(--green);font-weight:700}.minus{color:var(--red);font-weight:700}.dfile{border:1px solid var(--border);border-radius:8px;margin-top:8px;overflow:hidden}.dfile summary{cursor:pointer;padding:8px 10px;background:var(--surface2);font-size:12px;display:flex;gap:10px;align-items:center}.dfile pre{margin:0;padding:6px 0;font:11px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;overflow:auto}.dl{display:block;padding:0 10px;white-space:pre}.dl.add{background:#e6ffec;color:#116329}.dl.del{background:#ffebe9;color:#82071e}.dl.hunk{background:#ddf4ff;color:#0550ae}.dl.meta{background:var(--surface2);color:var(--muted);margin-top:4px}
 @media(max-width:760px){.shell{padding:20px 12px 40px}h1{font-size:25px}.grid,.workbench{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.commandlist{grid-template-columns:1fr}.card{padding:13px}.select{min-width:0;flex:1}.stats{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
@@ -98,10 +98,17 @@
     </section>
     <section class="card">
       <div class="cardhead"><div><h2>Commit graph</h2><div class="tiny muted" id="cg-meta"></div></div><button type="button" class="btn" id="commit-head" disabled>＋ Commit on HEAD</button></div>
+      <div class="dtabs"><button type="button" class="stab active" data-graph="local">Local repository</button><button type="button" class="stab" data-graph="remote">GitHub (remote)</button></div>
+      <div class="tiny muted" id="cg-sync" style="margin:-4px 0 8px"></div>
       <div class="graphwrap"><svg id="cg" class="cg" role="img" aria-label="Commit graph of main and the stacked branches"></svg></div>
       <div class="legend"><span><i></i>parent link</span><span><i class="dash"></i>parent changed: rebase needed</span><span>↻ was abc1234: commit replayed with a new SHA</span></div>
     </section>
   </div>
+  <section class="card" style="margin-top:14px">
+    <div class="cardhead"><div><h2>Pull request diff</h2><div class="tiny muted">What a reviewer sees on each PR in the stack, as GitHub has it</div></div><div class="dtabs" style="margin:0"><button type="button" class="stab active" data-diffmode="pr">What the PR shows</button><button type="button" class="stab" data-diffmode="main">Everything vs main</button></div></div>
+    <div class="dtabs" id="diff-chips"></div>
+    <div id="diff-body"></div>
+  </section>
   <section class="card" style="margin-top:14px">
     <div class="cardhead"><div><h2>What changed?</h2><div class="tiny muted" id="op-count">0 operations</div></div></div>
     <div class="workbench">
@@ -135,11 +142,35 @@
   if (!app) return;
   const $ = id => document.getElementById(id);
   const colors = ['#0969da','#1a7f37','#8250df','#bf8700','#cf222e','#0f766e'];
+  const F = (path,add,del,hunk) => ({path,add,del,hunk});
   const presets = {
-    auth: {title:'Authentication middleware',files:4,msgs:['Add session token model','Add auth middleware'],detail:'Auth middleware + session validation'},
-    api: {title:'Protected API endpoints',files:3,msgs:['Add /me endpoint','Enforce authorization on handlers'],detail:'API handlers + authorization checks'},
-    ui: {title:'Frontend integration',files:5,msgs:['Add login form','Wire login to API','Add logout button'],detail:'Login screen + API integration'}
+    auth: {title:'Authentication middleware',detail:'Auth middleware + session validation',msgs:[
+      {msg:'Add session token model',files:[F('src/session/token.js',42,0,['@@ -0,0 +1,42 @@','+export function createToken(user, ttl) {','+  return sign({ sub: user.id }, ttl);','+}']),F('test/session/token.test.js',28,0,['@@ -0,0 +1,28 @@','+test("createToken signs the user id", () => {','+  expect(verifyToken(createToken({ id: 1 }, 60)).sub).toBe(1);','+});'])]},
+      {msg:'Add auth middleware',files:[F('src/middleware/auth.js',57,0,['@@ -0,0 +1,57 @@','+export function requireAuth(req, res, next) {','+  if (!verifyToken(req.headers.authorization)) return res.status(401).end();','+  next();','+}']),F('src/app.js',3,1,['@@ -8,7 +8,9 @@',' app.use(cors());','-app.use(routes);','+app.use(requireAuth);','+app.use(routes);'])]}
+    ]},
+    api: {title:'Protected API endpoints',detail:'API handlers + authorization checks',msgs:[
+      {msg:'Add /me endpoint',files:[F('src/api/me.js',34,0,['@@ -0,0 +1,34 @@','+export async function getMe(req, res) {','+  const user = await users.find(req.user.id);','+  res.json({ id: user.id, name: user.name });','+}']),F('src/api/index.js',2,0,['@@ -5,3 +5,5 @@',' router.get("/health", health);','+import { getMe } from "./me";','+router.get("/me", getMe);'])]},
+      {msg:'Enforce authorization on handlers',files:[F('src/api/me.js',6,2,['@@ -1,6 +1,10 @@','-export async function getMe(req, res) {','+export async function getMe(req, res) {','+  if (!req.user) return res.status(403).end();']),F('src/api/orders.js',9,3,['@@ -12,7 +12,13 @@','-router.get("/orders", listOrders);','+router.get("/orders", requireAuth, listOrders);'])]}
+    ]},
+    ui: {title:'Frontend integration',detail:'Login screen + API integration',msgs:[
+      {msg:'Add login form',files:[F('web/LoginForm.jsx',64,0,['@@ -0,0 +1,64 @@','+export function LoginForm({ onSubmit }) {','+  return <form onSubmit={onSubmit}>...</form>;','+}']),F('web/styles/login.css',22,0,['@@ -0,0 +1,22 @@','+.login { max-width: 320px; margin: 0 auto; }'])]},
+      {msg:'Wire login to API',files:[F('web/api/client.js',18,0,['@@ -0,0 +1,18 @@','+export const login = (body) => post("/session", body);']),F('web/LoginForm.jsx',11,4,['@@ -4,6 +4,13 @@','-  onSubmit();','+  await login({ email, password });'])]},
+      {msg:'Add logout button',files:[F('web/Header.jsx',9,1,['@@ -10,4 +10,12 @@','-  return <header>{title}</header>;','+  return <header>{title}<button onClick={logout}>Log out</button></header>;'])]}
+    ]}
   };
+  const defaultPreset = {title:'Feature implementation',detail:'Feature-specific changes',msgs:[{msg:'Implement feature',files:[F('src/feature.js',30,0,['@@ -0,0 +1,30 @@','+export function feature() {','+  return true;','+}'])]}]};
+  const conflictFiles = () => [F(conflictFile,2,2,['@@ -4,3 +4,3 @@','-export const SESSION_TTL = 15 * 60;','+export const SESSION_TTL = 30 * 60;'])];
+  function followUpFiles(branch, msg) {
+    const primary = branch.commits[0].files[0].path, slug = branch.name.replace(/^feature-/, '');
+    return {
+      'Address review feedback': [F(primary,4,2,['@@ -12,6 +12,8 @@','-  // TODO: handle errors','+  // Handle errors as requested in review','+  if (!input) throw new Error("input required");'])],
+      'Add unit tests': [F('test/' + slug + '.test.js',31,0,['@@ -0,0 +1,31 @@','+describe("' + slug + '", () => {','+  it("handles the happy path", () => {});','+});'])],
+      'Fix edge case': [F(primary,5,1,['@@ -20,4 +20,8 @@','-  return items[0];','+  if (!items.length) return null;','+  return items[0];'])],
+      'Refactor helpers': [F('src/utils/helpers.js',12,9,['@@ -3,9 +3,12 @@','-function fmt(a, b) { return a + b; }','+export const fmt = (a, b) => a + " " + b;'])],
+      'Update docs': [F('docs/' + slug + '.md',8,0,['@@ -0,0 +1,8 @@','+# ' + slug,'+Describes how this layer works.'])]
+    }[msg];
+  }
+  const fileCount = commits => new Set(commits.flatMap(commit => (commit.files || []).map(file => file.path))).size;
   let shaSeed = 0x1a2b3c4d;
   const newSha = () => { shaSeed = (Math.imul(shaSeed,1103515245) + 12345) >>> 0; return shaSeed.toString(16).padStart(8,'0').slice(0,7); };
   const freshMain = () => ['Initial commit','Add project scaffolding','Update README'].map(msg => ({sha:newSha(),msg,prev:null}));
@@ -151,7 +182,7 @@
   const trunc = (text,max) => text.length > max ? text.slice(0,max - 1) + '\u2026' : text;
   const state = {
     branches: [], main: freshMain(), head:'main', nextPr:1, merged:[], logs:[], operations:0,
-    ciRuns:0, mergeMethod:'squash', rebase:null,
+    ciRuns:0, mergeMethod:'squash', rebase:null, graphView:'local', diffBranch:null, diffMode:'pr',
     activeTab:'build', selectedStep:0
   };
   const escapeHtml = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -174,23 +205,24 @@
   }
   function makeBranch(name, index) {
     const lower = name.toLowerCase();
-    const preset = lower.includes('auth') ? presets.auth : lower.includes('api') ? presets.api : (/\bui\b/.test(lower) || lower.includes('front')) ? presets.ui : {title:'Feature implementation',files:2,msgs:['Implement feature'],detail:'Feature-specific changes'};
+    const preset = lower.includes('auth') ? presets.auth : lower.includes('api') ? presets.api : (/\bui\b/.test(lower) || lower.includes('front')) ? presets.ui : defaultPreset;
     const previousActive = activeBranches().at(-1);
     const originalBase = index === 0 ? 'main' : (previousActive ? previousActive.name : 'main');
     const baseSha = (previousActive ? previousActive.commits : state.main).at(-1).sha;
-    const commits = preset.msgs.map(msg => ({sha:newSha(),msg,prev:null}));
-    return {title:preset.title,files:preset.files,detail:preset.detail,commits,baseSha,name,pr:null,ciSha:null,merged:false,rebaseCount:0,originalBase,baseBranch:originalBase,color:colors[index % colors.length]};
+    const commits = preset.msgs.map(item => ({sha:newSha(),msg:item.msg,prev:null,files:item.files}));
+    return {title:preset.title,detail:preset.detail,commits,baseSha,name,pr:null,ciSha:null,merged:false,rebaseCount:0,originalBase,baseBranch:originalBase,color:colors[index % colors.length]};
   }
   const parentTipSha = (active,i) => (i === 0 ? state.main : active[i - 1].commits).at(-1).sha;
-  function staleInfo(active,i) {
-    const parentCommits = i === 0 ? state.main : active[i - 1].commits;
-    const parentName = i === 0 ? 'main' : active[i - 1].name;
-    const at = parentCommits.findIndex(commit => commit.sha === active[i].baseSha);
+  function staleFor(entries,i) {
+    const parentCommits = i === 0 ? state.main : entries[i - 1].commits;
+    const parentName = i === 0 ? 'main' : entries[i - 1].branch.name;
+    const at = parentCommits.findIndex(commit => commit.sha === entries[i].baseSha);
     if (at < 0) return {text:'base replaced; rebase onto ' + parentName};
     // A merge commit keeps the original commits, so it does not leave the branches above behind.
     const behind = parentCommits.slice(at + 1).filter(commit => !commit.mergeOf).length;
     return behind ? {text:behind + ' new commit(s) on ' + parentName + '; rebase needed'} : null;
   }
+  const staleInfo = (active,i) => staleFor(active.map(branch => ({branch,commits:branch.commits,baseSha:branch.baseSha})),i);
   const staleText = (active,branch) => { const info = staleInfo(active,active.indexOf(branch)); return info ? ' \u00b7 \u26a0 ' + escapeHtml(info.text) : ''; };
   const needsRebase = () => { const active = activeBranches(); return active.some((_,i) => staleInfo(active,i)); };
   function conflictFor(active,i) {
@@ -224,12 +256,45 @@
     const runs = [];
     activeBranches().forEach(branch => {
       const tip = branch.commits.at(-1).sha;
+      branch.remote = {commits:branch.commits.map(commit => ({...commit})), baseSha:branch.baseSha, byGitHub:false};
       if (branch.pr === null || branch.ciSha === tip) return;
       branch.ciSha = tip;
       state.ciRuns++;
       runs.push('#' + branch.pr);
     });
     return runs;
+  }
+  // After a bottom-PR merge GitHub rebases the remaining PRs itself; local branches stay behind until fetched.
+  function serverRebase() {
+    const active = activeBranches(), rewritten = [];
+    let cascade = false;
+    active.forEach((branch,i) => {
+      if (!branch.remote) return;
+      const parent = i === 0 ? state.main : (active[i - 1].remote || active[i - 1]).commits;
+      if (!cascade && parent.some(commit => commit.sha === branch.remote.baseSha)) return;
+      const inSync = branch.remote.commits.at(-1).sha === branch.commits.at(-1).sha;
+      branch.remote.commits = branch.remote.commits.map(commit => ({...commit, prev:commit.sha, sha:newSha()}));
+      branch.remote.baseSha = parent.at(-1).sha;
+      branch.remote.byGitHub = inSync;
+      if (branch.pr !== null) {
+        state.ciRuns++;
+        if (inSync) branch.ciSha = branch.remote.commits.at(-1).sha;
+      }
+      cascade = true;
+      rewritten.push(branch.name);
+    });
+    return rewritten;
+  }
+  function adoptRemote() {
+    const adopted = [];
+    activeBranches().forEach(branch => {
+      if (!branch.remote || !branch.remote.byGitHub) return;
+      branch.commits = branch.remote.commits.map(commit => ({...commit}));
+      branch.baseSha = branch.remote.baseSha;
+      branch.remote.byGitHub = false;
+      adopted.push(branch.name);
+    });
+    return adopted;
   }
   function busy(command) {
     if (!state.rebase) return false;
@@ -337,6 +402,7 @@
     const msg = conflicting ? conflictMsg : followUps[commitSeq++ % followUps.length];
     const commit = {sha:newSha(),msg,prev:null};
     if (conflicting) { commit.conflict = true; commit.file = conflictFile; }
+    commit.files = conflicting ? conflictFiles() : followUpFiles(branch,msg);
     branch.commits.push(commit);
     state.head = branch.name;
     addLog('git commit -m "' + msg + '"','[' + branch.name + ' ' + commit.sha + '] ' + msg);
@@ -348,7 +414,7 @@
   function addMainCommit(conflicting = false) {
     if (busy('git commit')) return;
     const msg = conflicting ? conflictMsg : mainFollowUps[mainSeq++ % mainFollowUps.length];
-    const commit = {sha:newSha(),msg,prev:null};
+    const commit = {sha:newSha(),msg,prev:null,files:conflicting ? conflictFiles() : []};
     if (conflicting) { commit.conflict = true; commit.file = conflictFile; }
     state.main.push(commit);
     state.head = 'main';
@@ -426,12 +492,14 @@
     const current = currentIndex();
     const start = upstack && current >= 0 ? current : 0;
     const command = upstack ? 'gh stack rebase --upstack' : 'gh stack rebase';
+    const adopted = adoptRemote();
     const snap = snapshot();
     const result = replay(start);
     if (result.conflict) { pauseRebase(command, snap, result); return; }
     const replayed = result.replayed;
-    addLog(command, replayed.length ? 'Fetched from the remote and replayed ' + replayed.join(', ') + ' onto the updated parent history. Replayed commits got new SHAs (simulated). Run gh stack push to update the PRs.' : 'Fetched from the remote. Every branch already starts at its parent tip, so nothing was replayed (simulated).');
-    if (!replayed.length) { explain('<strong>Already up to date.</strong> Each branch starts at the tip of its parent, so no commits were replayed.'); render(); return; }
+    const pulled = adopted.length ? ' Pulled the rebase GitHub already did for ' + adopted.join(', ') + '.' : '';
+    addLog(command, replayed.length ? 'Fetched from the remote and replayed ' + replayed.join(', ') + ' onto the updated parent history. Replayed commits got new SHAs (simulated). Run gh stack push to update the PRs.' + pulled : 'Fetched from the remote. Every branch already starts at its parent tip, so nothing was replayed (simulated).' + pulled);
+    if (!replayed.length) { explain(adopted.length ? '<strong>Pulled the rebase GitHub already did.</strong> After the merge, GitHub rebased the remaining PRs on its side. Fetching brought those commits into your local branches, so nothing was left to replay.' : '<strong>Already up to date.</strong> Each branch starts at the tip of its parent, so no commits were replayed.'); render(); return; }
     explain('<strong>Cascading rebase complete.</strong> The branches that were behind their parent, and every branch above them, were replayed in dependency order. Their commits have new SHAs (see the \u21bb marks in the graph). Merged parents are skipped so the first remaining layer is based on the next unmerged ancestor. In a real repository, a conflict may pause the rebase until you resolve it.','ok','Rebase is local only. Run gh stack push to update the PRs; CI re-runs on every branch whose commits changed.');
     render();
   }
@@ -446,14 +514,15 @@
       state.main.push({...base,sha:newSha(),msg:branch.title + ' (#' + branch.pr + ')',landing:true});
     }
   }
-  function afterMerge(method) {
+  function afterMerge(method, rewritten) {
     const how = {
       squash:'Each merged PR landed on main as one new squash commit (simulated), so the original commits are no longer on main.',
       merge:'Each merged PR landed on main as a merge commit that keeps its original commits (simulated).',
       rebase:'Each merged PR landed on main as replayed copies of its commits with new SHAs (simulated), so the original commits are no longer on main.'
     }[method];
+    if (rewritten.length) return 'Higher layers remain open. ' + how + ' GitHub already rebased ' + rewritten.join(', ') + ' on its side (see the GitHub tab, where the commits have new SHAs). Your local branches still point at the old commits (dashed links). Run <code>gh stack sync</code> to pull the rebased branches.';
     return needsRebase()
-      ? 'Higher layers remain open. ' + how + ' They still build on the old commits (dashed links in the graph). GitHub rebases the remaining PRs on its side when the bottom PR merges; run <code>gh stack sync</code> locally to catch up.'
+      ? 'Higher layers remain open. ' + how + ' They still build on the old commits (dashed links in the graph). Run <code>gh stack rebase</code> or <code>gh stack sync</code> to replay them.'
       : 'Higher layers remain open. ' + how + ' They already build on commits that exist on main, so there is nothing to replay. Run <code>gh stack sync</code> to update local main.';
   }
   function mergeThrough(pr, method = state.mergeMethod) {
@@ -478,42 +547,45 @@
     }
     const active = activeBranches();
     if (active.length) active[0].baseBranch = 'main';
+    const rewritten = serverRebase();
     state.head = active.length ? active.at(-1).name : 'main';
     addLog('gh stack merge ' + pr + ' --' + method,'Merged ' + (mergedNow.length ? mergedNow.join(', ') : 'no additional PRs') + ' through PR #' + pr + '.');
-    explain('<strong>Stack merge simulated through PR #' + escapeHtml(pr) + '.</strong> Its unmerged dependencies below it were included. ' + (active.length ? afterMerge(method) : 'All layers have landed; the stack is complete.'),'ok','The merge was simulated only. No pull requests or repository branches were changed.');
+    explain('<strong>Stack merge simulated through PR #' + escapeHtml(pr) + '.</strong> Its unmerged dependencies below it were included. ' + (active.length ? afterMerge(method,rewritten) : 'All layers have landed; the stack is complete.'),'ok','The merge was simulated only. No pull requests or repository branches were changed.');
     render();
   }
   function renderCommitGraph() {
+    const remote = state.graphView === 'remote';
     const active = activeBranches();
+    const entries = active.filter(branch => !remote || branch.remote).map(branch => ({branch, commits: remote ? branch.remote.commits : branch.commits, baseSha: remote ? branch.remote.baseSha : branch.baseSha}));
     const rowH = 50, laneW = 34, padL = 24, padT = 28, curve = 14;
     const lx = lane => padL + lane * laneW;
     const rows = [];
-    for (let i = active.length - 1; i >= 0; i--) {
-      const branch = active[i], list = branch.commits;
-      for (let j = list.length - 1; j >= 0; j--) rows.push({lane:i + 1,branch,commit:list[j],tip:j === list.length - 1});
+    for (let i = entries.length - 1; i >= 0; i--) {
+      const {branch, commits: list} = entries[i];
+      for (let j = list.length - 1; j >= 0; j--) rows.push({lane:i + 1,i,branch,commit:list[j],tip:j === list.length - 1});
     }
     for (let j = state.main.length - 1; j >= 0; j--) rows.push({lane:0,branch:null,commit:state.main[j],tip:j === state.main.length - 1});
     const bySha = new Map();
     rows.forEach((row,r) => { row.y = padT + r * rowH; bySha.set(row.commit.sha,row); });
-    const labelX = lx(active.length) + 28;
+    const labelX = lx(entries.length) + 28;
     const H = padT * 2 + (rows.length - 1) * rowH;
     let bands = '', lines = '', nodes = '', text = '', maxX = labelX + 340;
     const mono = 'ui-monospace,SFMono-Regular,Consolas,monospace';
     const mainRows = rows.filter(row => !row.branch);
     if (mainRows.length > 1) lines += '<line x1="' + lx(0) + '" y1="' + mainRows[0].y + '" x2="' + lx(0) + '" y2="' + mainRows.at(-1).y + '" stroke="#8c959f" stroke-width="2.5"/>';
-    active.forEach((branch,i) => {
+    entries.forEach(({branch,baseSha},i) => {
       const own = rows.filter(row => row.branch === branch);
       const x = lx(i + 1), oldest = own.at(-1);
       if (own.length > 1) lines += '<line x1="' + x + '" y1="' + own[0].y + '" x2="' + x + '" y2="' + oldest.y + '" stroke="' + branch.color + '" stroke-width="2.5"/>';
-      const stale = staleInfo(active,i);
-      const target = bySha.get(branch.baseSha) || bySha.get(parentTipSha(active,i));
+      const stale = staleFor(entries,i);
+      const target = bySha.get(baseSha) || bySha.get((i === 0 ? state.main : entries[i - 1].commits).at(-1).sha);
       lines += '<path d="M' + x + ' ' + oldest.y + ' V' + (target.y - curve) + ' Q' + x + ' ' + target.y + ' ' + (x - curve) + ' ' + target.y + ' H' + lx(target.lane) + '" fill="none" stroke="' + (stale ? '#bf8700' : branch.color) + '" stroke-width="2.5"' + (stale ? ' stroke-dasharray="5 4"' : '') + '/>';
     });
     rows.forEach(row => {
       const {commit, branch, y} = row, x = lx(row.lane);
-      const onHead = branch ? branch.name === state.head : state.head === 'main';
+      const onHead = !remote && (branch ? branch.name === state.head : state.head === 'main');
       const fill = branch ? branch.color : (commit.pr ? commit.color : '#57606a');
-      if (branch && branch.name === state.head) bands += '<rect x="0" y="' + (y - rowH / 2) + '" width="100%" height="' + rowH + '" fill="' + branch.color + '" opacity=".08"/>';
+      if (!remote && branch && branch.name === state.head) bands += '<rect x="0" y="' + (y - rowH / 2) + '" width="100%" height="' + rowH + '" fill="' + branch.color + '" opacity=".08"/>';
       if (row.tip && onHead) nodes += '<circle cx="' + x + '" cy="' + y + '" r="10" fill="none" stroke="#0969da" stroke-width="2"/>';
       nodes += '<circle cx="' + x + '" cy="' + y + '" r="6" fill="' + fill + '" stroke="#fff" stroke-width="2"><title>' + escapeHtml(commit.sha + ' ' + commit.msg) + '</title></circle>';
       text += '<text x="' + labelX + '" y="' + (y - 3) + '" font-size="12" font-weight="600" fill="#1f2328">' + escapeHtml(trunc(commit.msg,46)) + '</text>';
@@ -533,7 +605,7 @@
       if (branch && row.tip && branch.pr !== null) pills.push(branch.ciSha === commit.sha ? ['CI \u2713','#dafbe1','#1a7f37','#82c99a'] : ['CI not run','#f6f8fa','#656d76','#d1d9e0']);
       if (!branch && commit.landing) pills.push(['merged \u00b7 PR #' + commit.pr,'#dafbe1','#1a7f37','#82c99a']);
       if (commit.conflict) pills.push(['\u26a1 edits ' + commit.file.split('/').pop(),'#ffebe9','#cf222e','#ff8182']);
-      if (branch && row.tip && staleInfo(active,active.indexOf(branch))) pills.push(['\u26a0 rebase needed','#fff8c5','#9a6700','#d4a72c']);
+      if (branch && row.tip && staleFor(entries,row.i)) pills.push(['\u26a0 rebase needed','#fff8c5','#9a6700','#d4a72c']);
       pills.forEach(([label,bg,fg,stroke]) => {
         const w = label.length * 6.2 + 12;
         text += '<rect x="' + cx + '" y="' + (ly - 11) + '" width="' + w + '" height="15" rx="7.5" fill="' + bg + '" stroke="' + (stroke || bg) + '"/><text x="' + (cx + w / 2) + '" y="' + (ly - 0.5) + '" text-anchor="middle" font-size="10" font-weight="700" fill="' + fg + '">' + escapeHtml(label) + '</text>';
@@ -574,6 +646,66 @@
     $('cf-add').disabled = r.stage !== 1;
     $('cf-continue').disabled = r.stage < 2;
   }
+  function renderGraphTabs() {
+    app.querySelectorAll('[data-graph]').forEach(button => button.classList.toggle('active',button.dataset.graph === state.graphView));
+    const active = activeBranches();
+    if (state.graphView === 'remote') {
+      const pushed = active.filter(branch => branch.remote);
+      $('cg-meta').textContent = pushed.reduce((sum,branch) => sum + branch.remote.commits.length,0) + ' pushed commit(s) on ' + pushed.length + ' branch(es) · ' + state.main.length + ' on main · as GitHub sees it';
+    }
+    const differs = active.filter(branch => !branch.remote || branch.remote.commits.at(-1).sha !== branch.commits.at(-1).sha || branch.remote.baseSha !== branch.baseSha);
+    const ahead = differs.filter(branch => branch.remote && branch.remote.byGitHub);
+    const behind = differs.filter(branch => !ahead.includes(branch));
+    const notes = [];
+    if (ahead.length) notes.push('GitHub rebased ' + ahead.map(branch => branch.name).join(', ') + ' after the merge. Run gh stack sync to pull it.');
+    if (behind.length) notes.push('Local differs from GitHub on ' + behind.map(branch => branch.name).join(', ') + ' (not pushed yet). Run gh stack push.');
+    $('cg-sync').textContent = !active.length ? '' : notes.length ? '⚠ ' + notes.join(' ') : '✓ Local and GitHub match.';
+  }
+  const viewCommits = branch => branch.remote ? branch.remote.commits : branch.commits;
+  function aggregate(commits) {
+    const files = new Map();
+    commits.forEach(commit => (commit.files || []).forEach(file => {
+      const entry = files.get(file.path) || {path:file.path, add:0, del:0, parts:[]};
+      entry.add += file.add;
+      entry.del += file.del;
+      entry.parts.push({sha:commit.sha, msg:commit.msg, file});
+      files.set(file.path,entry);
+    }));
+    return [...files.values()];
+  }
+  const totals = list => list.reduce((sum,file) => ({add:sum.add + file.add, del:sum.del + file.del}),{add:0,del:0});
+  const patchHtml = entry => entry.parts.map(part => {
+    const shown = part.file.hunk.filter(line => line[0] === '+' || line[0] === '-').length;
+    const more = part.file.add + part.file.del - shown;
+    const lines = part.file.hunk.map(line => '<span class="dl ' + (line[0] === '+' ? 'add' : line[0] === '-' ? 'del' : line[0] === '@' ? 'hunk' : '') + '">' + escapeHtml(line) + '</span>').join('');
+    return '<span class="dl meta">' + escapeHtml(part.sha + '  ' + part.msg) + '</span>' + lines + (more > 0 ? '<span class="dl meta">… ' + more + ' more changed line(s)</span>' : '');
+  }).join('');
+  const stat = sum => '<span class="plus">+' + sum.add + '</span> <span class="minus">-' + sum.del + '</span>';
+  function renderDiff() {
+    const active = activeBranches();
+    app.querySelectorAll('[data-diffmode]').forEach(button => button.classList.toggle('active',button.dataset.diffmode === state.diffMode));
+    if (!active.length) {
+      $('diff-chips').innerHTML = '';
+      $('diff-body').innerHTML = '<div class="tiny muted">Create a stack to see what reviewers get on each PR.</div>';
+      return;
+    }
+    const index = Math.max(0,active.findIndex(branch => branch.name === state.diffBranch));
+    const branch = active[index];
+    $('diff-chips').innerHTML = active.map(item => '<button type="button" class="stab ' + (item === branch ? 'active' : '') + '" data-diff="' + escapeHtml(item.name) + '">' + (item.pr !== null ? 'PR #' + item.pr + ' · ' : '') + escapeHtml(item.name) + '</button>').join('');
+    const own = aggregate(viewCommits(branch));
+    const all = aggregate(active.slice(0,index + 1).flatMap(viewCommits));
+    const vsMain = state.diffMode === 'main';
+    const shown = vsMain ? all : own;
+    const base = vsMain ? 'main' : baseFor(branch);
+    let html = '<div class="diffsum"><strong>' + (branch.pr !== null ? 'PR #' + branch.pr : 'No PR yet') + '</strong> · <code>' + escapeHtml(branch.name) + '</code> → <code>' + escapeHtml(base) + '</code> · ' + shown.length + ' file(s) changed ' + stat(totals(shown)) + '</div>';
+    if (vsMain) html += '<div class="hint">This is what one unstacked PR against <code>main</code> would show: the changes of ' + (index + 1) + ' layer(s) mixed together.</div>';
+    else if (index === 0) html += '<div class="hint">The bottom PR targets <code>main</code>, so its diff is just this layer.</div>';
+    else html += '<div class="hint">Reviewers see only this layer because the PR targets <code>' + escapeHtml(base) + '</code>. One unstacked PR against <code>main</code> would show ' + all.length + ' file(s) ' + stat(totals(all)) + ' across ' + (index + 1) + ' layers.</div>';
+    if (!branch.remote) html += '<div class="hint">Not pushed yet. Showing the local commits.</div>';
+    else if (branch.commits.at(-1).sha !== branch.remote.commits.at(-1).sha) html += '<div class="hint">Local has changes that are not pushed, so the PR does not show them yet.</div>';
+    html += shown.map((entry,n) => '<details class="dfile"' + (n === 0 ? ' open' : '') + '><summary><code>' + escapeHtml(entry.path) + '</code>' + stat(entry) + '</summary><pre>' + patchHtml(entry) + '</pre></details>').join('');
+    $('diff-body').innerHTML = html;
+  }
   function renderGraph() {
     const graph = $('graph');
     const reversed = state.branches.slice().reverse();
@@ -586,7 +718,7 @@
       html += '<button type="button" class="branch ' + (selected ? 'selected ' : '') + (branch.merged ? 'merged' : '') + '" data-branch="' + escapeHtml(branch.name) + '" ' + (branch.merged ? 'disabled' : '') + '>' +
         '<div class="branchtop"><span class="branchname"><i class="branchdot" style="background:' + branch.color + '"></i>' + escapeHtml(branch.name) + '</span><span class="status">' + (selected ? '● HEAD' : status) + '</span></div>' +
         '<div class="branchmeta">' + escapeHtml(branch.title) + ' · base: ' + escapeHtml(baseFor(branch)) + '</div>' +
-        '<div class="branchmeta">' + branch.commits.length + ' commit(s) · ' + branch.files + ' changed files' + (branch.rebaseCount ? ' · ' + branch.rebaseCount + ' rebase(s)' : '') + (branch.merged ? '' : ciText(branch) + staleText(act,branch)) + '</div></button>';
+        '<div class="branchmeta">' + branch.commits.length + ' commit(s) · ' + fileCount(branch.commits) + ' changed file(s)' + (branch.rebaseCount ? ' · ' + branch.rebaseCount + ' rebase(s)' : '') + (branch.merged ? '' : ciText(branch) + staleText(act,branch)) + '</div></button>';
     });
     if (reversed.length) html += '<div class="connector"><span>↓</span></div>';
     html += '<div class="branch trunk"><div class="branchtop"><span class="branchname">◉ main</span><span class="status">TRUNK</span></div><div class="branchmeta">Base branch · starting point</div></div>';
@@ -617,7 +749,9 @@
     $('merge-method').value = state.mergeMethod;
     $('rebase-note').style.display = needsRebase() && !paused ? 'block' : 'none';
     renderCommitGraph();
+    renderGraphTabs();
     renderConflict();
+    renderDiff();
     $('steps').querySelectorAll('.step').forEach((element,index) => element.classList.toggle('active',index === state.selectedStep));
 
     const openPrs = active.filter(branch => branch.pr !== null);
@@ -705,6 +839,7 @@
       if (busy(command)) return;
       const active = activeBranches();
       if (!active.length) { addLog(command,'There is no active stack to sync.'); render(); return; }
+      const adopted = adoptRemote();
       const snap = snapshot();
       const result = replay(0);
       if (result.conflict) {
@@ -715,7 +850,7 @@
       }
       const replayed = result.replayed;
       const runs = pushActive();
-      addLog(command,'Fetched and reconciled remote state, ' + (replayed.length ? 'replayed ' + replayed.join(', ') + ' with new SHAs' : 'found nothing to replay') + ', pushed active branches' + (runs.length ? ' (CI started on ' + runs.join(', ') + ')' : '') + ', and refreshed PR/Stack state. No new PRs were created.');
+      addLog(command,'Fetched and reconciled remote state' + (adopted.length ? ' (pulled the rebase GitHub did for ' + adopted.join(', ') + ')' : '') + ', ' + (replayed.length ? 'replayed ' + replayed.join(', ') + ' with new SHAs' : 'found nothing to replay') + ', pushed active branches' + (runs.length ? ' (CI started on ' + runs.join(', ') + ')' : '') + ', and refreshed PR/Stack state. No new PRs were created.');
       explain('<strong>Stack synced.</strong> <code>gh stack sync</code> reconciles the local stack with GitHub, rebases when needed, pushes active branches, and refreshes PR state. It does not create PRs; use <code>gh stack submit</code> for that.','ok','The simulated stack is synchronized.');
       render();
     } else if (subcommand === 'help') {
@@ -739,8 +874,11 @@
     const button = event.target.closest('button');
     if (!button || !app.contains(button)) return;
     if (button.dataset.tab) { setTab(button.dataset.tab); return; }
+    if (button.dataset.graph) { state.graphView = button.dataset.graph; render(); return; }
+    if (button.dataset.diff) { state.diffBranch = button.dataset.diff; render(); return; }
+    if (button.dataset.diffmode) { state.diffMode = button.dataset.diffmode; render(); return; }
     if (button.dataset.action === 'reset') {
-      state.branches = []; state.main = freshMain(); commitSeq = 0; mainSeq = 0; state.rebase = null; state.ciRuns = 0; state.head = 'main'; state.nextPr = 1; state.merged = []; state.logs = []; state.operations = 0; state.selectedStep = 0;
+      state.branches = []; state.main = freshMain(); commitSeq = 0; mainSeq = 0; state.rebase = null; state.diffBranch = null; state.ciRuns = 0; state.head = 'main'; state.nextPr = 1; state.merged = []; state.logs = []; state.operations = 0; state.selectedStep = 0;
       explain('Start with <strong>main</strong>. Initialize the stack with <code>gh stack init feature-auth</code>. This creates the bottom branch on top of trunk.');
       render(); return;
     }
