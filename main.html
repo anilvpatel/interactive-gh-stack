@@ -6,15 +6,15 @@
 <title>gh stack — Interactive Learning Lab</title>
 <style>
 :root{color-scheme:light;--bg:#f6f8fa;--surface:#fff;--surface2:#f6f8fa;--text:#1f2328;--muted:#656d76;--border:#d1d9e0;--blue:#0969da;--bluebg:#ddf4ff;--green:#1a7f37;--greenbg:#dafbe1;--purple:#8250df;--amber:#9a6700;--amberbg:#fff8c5;--red:#cf222e;--shadow:0 1px 2px #1f23280d}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.shell{max-width:1160px;margin:0 auto;padding:28px 20px 52px}.eyebrow{display:flex;gap:8px;align-items:center;font-size:11px;font-weight:750;letter-spacing:.12em;color:var(--muted)}.green-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}h1{font-size:30px;line-height:1.15;letter-spacing:-.04em;margin:10px 0 7px}.intro{color:var(--muted);max-width:760px;margin:0 0 22px}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 14px}.tab{border:1px solid var(--border);border-radius:9px;background:var(--surface);padding:9px 13px;font-weight:650;font-size:12px;color:var(--text)}.tab.active{border-color:var(--blue);background:var(--bluebg);color:#0550ae}.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;box-shadow:var(--shadow);min-width:0}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.cardhead h2,.card h2{font-size:14px;margin:0;font-weight:750}.muted{color:var(--muted)}.tiny{font-size:11px}.lesson{margin-bottom:14px}.lesson-desc{color:var(--muted);margin:5px 0 14px}.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.step{border:1px solid var(--border);border-radius:9px;padding:10px;text-align:left;background:var(--surface);min-width:0}.step.active{border-color:var(--blue);background:#f0f6ff}.step .number{font-size:10px;color:var(--muted)}.step b{display:block;font-size:12px;margin:4px 0}.step small{display:block;color:var(--muted);font-size:10px;line-height:1.35}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:8px 11px;font-weight:650;font-size:12px;color:var(--text)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.success{color:var(--green);border-color:#82c99a}.btn:hover:not(:disabled),.tab:hover{filter:brightness(.97)}.grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(310px,.9fr);gap:14px;margin-top:14px}.branch-graph{display:flex;flex-direction:column;align-items:stretch;padding:12px 6px 4px}.branch{width:100%;border:1px solid var(--border);border-radius:9px;padding:10px 12px;background:#fff;text-align:left;margin:0;color:var(--text)}.branch.selected{border:2px solid var(--blue);padding:9px 11px;box-shadow:0 0 0 2px #ddf4ff}.branch.merged{background:#f0fff4;border-color:#82c99a;cursor:default}.branch.trunk{border-style:dashed;background:var(--surface2);cursor:default}.branchtop{display:flex;align-items:center;justify-content:space-between;gap:8px}.branchname{font-weight:750;font-size:12px;overflow-wrap:anywhere}.branchmeta{font-size:10px;color:var(--muted);margin-top:4px}.branchdot{display:inline-block;width:8px;height:8px;border-radius:3px;margin-right:7px}.connector{height:27px;display:flex;align-items:center;justify-content:center;color:#8c959f;position:relative}.connector:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--border)}.connector span{position:relative;background:var(--surface);padding:0 7px}.stackinfo{padding:9px;border-radius:8px;background:var(--surface2);font-size:11px;margin-top:10px}.explain{font-size:12px;line-height:1.65}.explain strong{font-weight:750}.callout{padding:10px;border-radius:8px;font-size:11px;margin-top:9px}.callout.warn{background:var(--amberbg);border:1px solid #d4a72c}.callout.ok{background:var(--greenbg);border:1px solid #82c99a}.terminal{background:#0d1117;border:1px solid #30363d;border-radius:10px;padding:13px;color:#e6edf3;min-height:218px;display:flex;flex-direction:column}.termhead{font-size:10px;color:#8b949e;display:flex;justify-content:space-between;margin-bottom:10px}.log{font:11px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-y:auto;max-height:180px;display:flex;flex-direction:column;gap:7px;white-space:pre-wrap;overflow-wrap:anywhere}.log .cmd{color:#79c0ff}.log .out{color:#c9d1d9}.cmdrow{display:flex;gap:7px;margin-top:auto;padding-top:10px}.cmdrow input{min-width:0;flex:1;background:#161b22;border:1px solid #30363d;color:#e6edf3;border-radius:7px;padding:9px;font:11px ui-monospace,monospace}.cmdrow button{background:#238636;color:white;border:0;border-radius:7px;padding:8px 12px;font-size:11px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}.stat{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:10px}.stat b{display:block;font-size:18px}.stat span{font-size:10px;color:var(--muted)}.commandlist{display:grid;grid-template-columns:1fr 1fr;gap:8px}.command{border:1px solid var(--border);border-radius:9px;padding:10px;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.command code{font-size:11px;overflow-wrap:anywhere}.command p{margin:4px 0 0;font-size:10px;color:var(--muted)}.try{padding:5px 8px;font-size:10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);white-space:nowrap}.tabcontent{display:none}.tabcontent.active{display:block}.navactions{display:flex;gap:7px;flex-wrap:wrap}.select{border:1px solid var(--border);border-radius:7px;padding:9px;background:#fff;min-width:240px;max-width:100%}.footer{font-size:10px;color:var(--muted);margin-top:16px;line-height:1.6}.footer a{color:var(--blue)}code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 4px;font-size:.92em}.hint{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5}.status{border:1px solid var(--border);border-radius:99px;padding:3px 8px;font-size:10px;font-weight:700;white-space:nowrap}.lower-note{font-size:11px;color:var(--muted);line-height:1.6;margin-top:8px}
-@media(max-width:760px){.shell{padding:20px 12px 40px}h1{font-size:25px}.grid{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.commandlist{grid-template-columns:1fr}.card{padding:13px}.select{min-width:0;flex:1}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.shell{max-width:1160px;margin:0 auto;padding:28px 20px 52px}.eyebrow{display:flex;gap:8px;align-items:center;font-size:11px;font-weight:750;letter-spacing:.12em;color:var(--muted)}.green-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}h1{font-size:30px;line-height:1.15;letter-spacing:-.04em;margin:10px 0 7px}.intro{color:var(--muted);max-width:760px;margin:0 0 22px}.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 14px}.tab{border:1px solid var(--border);border-radius:9px;background:var(--surface);padding:9px 13px;font-weight:650;font-size:12px;color:var(--text)}.tab.active{border-color:var(--blue);background:var(--bluebg);color:#0550ae}.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;box-shadow:var(--shadow);min-width:0}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.cardhead h2,.card h2{font-size:14px;margin:0;font-weight:750}.muted{color:var(--muted)}.tiny{font-size:11px}.lesson{margin-bottom:14px}.lesson-desc{color:var(--muted);margin:5px 0 14px}.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.step{border:1px solid var(--border);border-radius:9px;padding:10px;text-align:left;background:var(--surface);min-width:0}.step.active{border-color:var(--blue);background:#f0f6ff}.step .number{font-size:10px;color:var(--muted)}.step b{display:block;font-size:12px;margin:4px 0}.step small{display:block;color:var(--muted);font-size:10px;line-height:1.35}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{border:1px solid var(--border);background:var(--surface);border-radius:8px;padding:8px 11px;font-weight:650;font-size:12px;color:var(--text)}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.success{color:var(--green);border-color:#82c99a}.btn:hover:not(:disabled),.tab:hover{filter:brightness(.97)}.grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:14px;margin-top:14px;align-items:start}.workbench{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:16px;align-items:start}.graphwrap{overflow:auto;max-height:600px;border:1px solid var(--border);border-radius:9px;background:#fff}.cg{display:block}.legend{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:10px;color:var(--muted);margin-top:9px;line-height:1.5}.legend i{display:inline-block;width:14px;height:0;border-top:2px solid #8c959f;vertical-align:middle;margin-right:5px}.legend i.dash{border-top:2px dashed #bf8700}.branch-graph{display:flex;flex-direction:column;align-items:stretch;padding:12px 6px 4px}.branch{width:100%;border:1px solid var(--border);border-radius:9px;padding:10px 12px;background:#fff;text-align:left;margin:0;color:var(--text)}.branch.selected{border:2px solid var(--blue);padding:9px 11px;box-shadow:0 0 0 2px #ddf4ff}.branch.merged{background:#f0fff4;border-color:#82c99a;cursor:default}.branch.trunk{border-style:dashed;background:var(--surface2);cursor:default}.branchtop{display:flex;align-items:center;justify-content:space-between;gap:8px}.branchname{font-weight:750;font-size:12px;overflow-wrap:anywhere}.branchmeta{font-size:10px;color:var(--muted);margin-top:4px}.branchdot{display:inline-block;width:8px;height:8px;border-radius:3px;margin-right:7px}.connector{height:27px;display:flex;align-items:center;justify-content:center;color:#8c959f;position:relative}.connector:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--border)}.connector span{position:relative;background:var(--surface);padding:0 7px}.stackinfo{padding:9px;border-radius:8px;background:var(--surface2);font-size:11px;margin-top:10px}.explain{font-size:12px;line-height:1.65}.explain strong{font-weight:750}.callout{padding:10px;border-radius:8px;font-size:11px;margin-top:9px}.callout.warn{background:var(--amberbg);border:1px solid #d4a72c}.callout.ok{background:var(--greenbg);border:1px solid #82c99a}.terminal{background:#0d1117;border:1px solid #30363d;border-radius:10px;padding:13px;color:#e6edf3;min-height:218px;display:flex;flex-direction:column}.termhead{font-size:10px;color:#8b949e;display:flex;justify-content:space-between;margin-bottom:10px}.log{font:11px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-y:auto;max-height:180px;display:flex;flex-direction:column;gap:7px;white-space:pre-wrap;overflow-wrap:anywhere}.log .cmd{color:#79c0ff}.log .out{color:#c9d1d9}.cmdrow{display:flex;gap:7px;margin-top:auto;padding-top:10px}.cmdrow input{min-width:0;flex:1;background:#161b22;border:1px solid #30363d;color:#e6edf3;border-radius:7px;padding:9px;font:11px ui-monospace,monospace}.cmdrow button{background:#238636;color:white;border:0;border-radius:7px;padding:8px 12px;font-size:11px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}.stat{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:10px}.stat b{display:block;font-size:18px}.stat span{font-size:10px;color:var(--muted)}.commandlist{display:grid;grid-template-columns:1fr 1fr;gap:8px}.command{border:1px solid var(--border);border-radius:9px;padding:10px;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.command code{font-size:11px;overflow-wrap:anywhere}.command p{margin:4px 0 0;font-size:10px;color:var(--muted)}.try{padding:5px 8px;font-size:10px;border:1px solid var(--border);border-radius:6px;background:var(--surface);white-space:nowrap}.tabcontent{display:none}.tabcontent.active{display:block}.navactions{display:flex;gap:7px;flex-wrap:wrap}.select{border:1px solid var(--border);border-radius:7px;padding:9px;background:#fff;min-width:240px;max-width:100%}.footer{font-size:10px;color:var(--muted);margin-top:16px;line-height:1.6}.footer a{color:var(--blue)}code{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:1px 4px;font-size:.92em}.hint{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5}.status{border:1px solid var(--border);border-radius:99px;padding:3px 8px;font-size:10px;font-weight:700;white-space:nowrap}.lower-note{font-size:11px;color:var(--muted);line-height:1.6;margin-top:8px}
+@media(max-width:760px){.shell{padding:20px 12px 40px}h1{font-size:25px}.grid,.workbench{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.commandlist{grid-template-columns:1fr}.card{padding:13px}.select{min-width:0;flex:1}}
 </style>
 </head>
 <body>
 <div class="shell" id="app">
   <div class="eyebrow"><span class="green-dot"></span> GIT WORKFLOW PLAYGROUND <span>/</span> GH STACK</div>
   <h1>Learn stacked pull requests by doing.</h1>
-  <p class="intro">Build a stack, navigate between dependent branches, rebase lower layers, and merge a stack. The graph and simulated terminal update as you experiment. No GitHub account or repository access is needed.</p>
+  <p class="intro">Build a stack, navigate between dependent branches, rebase lower layers, and merge a stack. The branch stack, commit graph, and simulated terminal update as you experiment. No GitHub account or repository access is needed.</p>
 
   <nav class="tabs" aria-label="Learning sections">
     <button type="button" class="tab active" data-tab="build" aria-selected="true">01 · Build</button>
@@ -37,7 +37,7 @@
       <button type="button" class="btn" id="add-ui" disabled>Add frontend layer</button>
       <button type="button" class="btn success" id="submit" disabled>Submit stack</button>
     </div>
-    <div class="hint">You can also type commands in the terminal. Try <code>gh stack init feature-auth feature-api feature-ui</code> to create three layers in one step.</div>
+    <div class="hint">You can also type commands in the terminal. Try <code>gh stack init feature-auth feature-api feature-ui</code> to create three layers in one step, and <code>git commit</code> to add a commit on the checked-out branch.</div>
   </section>
 
   <section class="card lesson tabcontent" id="tab-navigate">
@@ -72,17 +72,28 @@
       <p class="tiny muted" id="graph-hint">Run <code>gh stack init feature-auth</code> to create the first branch.</p>
     </section>
     <section class="card">
-      <div class="cardhead"><div><h2>What changed?</h2><div class="tiny muted" id="op-count">0 operations</div></div></div>
+      <div class="cardhead"><div><h2>Commit graph</h2><div class="tiny muted" id="cg-meta"></div></div><button type="button" class="btn" id="commit-head" disabled>＋ Commit on HEAD</button></div>
+      <div class="graphwrap"><svg id="cg" class="cg" role="img" aria-label="Commit graph of main and the stacked branches"></svg></div>
+      <div class="legend"><span><i></i>parent link</span><span><i class="dash"></i>parent changed: rebase needed</span><span>↻ was abc1234: commit replayed with a new SHA</span></div>
+    </section>
+  </div>
+  <section class="card" style="margin-top:14px">
+    <div class="cardhead"><div><h2>What changed?</h2><div class="tiny muted" id="op-count">0 operations</div></div></div>
+    <div class="workbench">
+    <div>
       <div class="explain" id="explanation">Start with <strong>main</strong>. Initialize the stack with <code>gh stack init feature-auth</code>. This creates the bottom branch on top of trunk.</div>
       <div class="callout" id="context" style="display:none"></div>
-      <div class="terminal" style="margin-top:13px">
+    </div>
+    <div>
+      <div class="terminal">
         <div class="termhead"><span>TERMINAL · SIMULATED</span><span>● ● ●</span></div>
         <div class="log" id="log" aria-live="polite"><div class="out">Welcome. Try: gh stack init feature-auth</div></div>
         <form class="cmdrow" id="cmd-form"><input id="cmd-input" autocomplete="off" spellcheck="false" placeholder="gh stack add feature-api" aria-label="Enter a simulated gh stack command"><button type="submit">Run ↵</button></form>
       </div>
       <div class="tiny muted" style="margin-top:7px">Commands are simulated locally in this page; they do not access your repository.</div>
-    </section>
-  </div>
+    </div>
+    </div>
+  </section>
 
   <div class="stats">
     <div class="stat"><b id="stat-branches">0</b><span>Active branches</span></div>
@@ -99,13 +110,19 @@
   const $ = id => document.getElementById(id);
   const colors = ['#0969da','#1a7f37','#8250df','#bf8700','#cf222e','#0f766e'];
   const presets = {
-    auth: {title:'Authentication middleware',files:4,commits:2,detail:'Auth middleware + session validation'},
-    api: {title:'Protected API endpoints',files:3,commits:2,detail:'API handlers + authorization checks'},
-    ui: {title:'Frontend integration',files:5,commits:3,detail:'Login screen + API integration'}
+    auth: {title:'Authentication middleware',files:4,msgs:['Add session token model','Add auth middleware'],detail:'Auth middleware + session validation'},
+    api: {title:'Protected API endpoints',files:3,msgs:['Add /me endpoint','Enforce authorization on handlers'],detail:'API handlers + authorization checks'},
+    ui: {title:'Frontend integration',files:5,msgs:['Add login form','Wire login to API','Add logout button'],detail:'Login screen + API integration'}
   };
+  let shaSeed = 0x1a2b3c4d;
+  const newSha = () => { shaSeed = (Math.imul(shaSeed,1103515245) + 12345) >>> 0; return shaSeed.toString(16).padStart(8,'0').slice(0,7); };
+  const freshMain = () => ['Initial commit','Add project scaffolding','Update README'].map(msg => ({sha:newSha(),msg,prev:null}));
+  let commitSeq = 0;
+  const followUps = ['Address review feedback','Add unit tests','Fix edge case','Refactor helpers','Update docs'];
+  const trunc = (text,max) => text.length > max ? text.slice(0,max - 1) + '\u2026' : text;
   const state = {
-    branches: [], head:'main', nextPr:1, merged:[], logs:[], operations:0,
-    dirty:false, activeTab:'build', selectedStep:0
+    branches: [], main: freshMain(), head:'main', nextPr:1, merged:[], logs:[], operations:0,
+    activeTab:'build', selectedStep:0
   };
   const escapeHtml = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const activeBranches = () => state.branches.filter(branch => !branch.merged);
@@ -130,7 +147,34 @@
     const preset = lower.includes('auth') ? presets.auth : lower.includes('api') ? presets.api : (lower.includes('ui') || lower.includes('front')) ? presets.ui : {title:'Feature implementation',files:2,commits:1,detail:'Feature-specific changes'};
     const previousActive = activeBranches().at(-1);
     const originalBase = index === 0 ? 'main' : (previousActive ? previousActive.name : 'main');
-    return {...preset,name,pr:null,merged:false,rebaseCount:0,originalBase,baseBranch:originalBase,color:colors[index % colors.length]};
+    const baseSha = (previousActive ? previousActive.commits : state.main).at(-1).sha;
+    const commits = preset.msgs.map(msg => ({sha:newSha(),msg,prev:null}));
+    return {title:preset.title,files:preset.files,detail:preset.detail,commits,baseSha,name,pr:null,merged:false,rebaseCount:0,originalBase,baseBranch:originalBase,color:colors[index % colors.length]};
+  }
+  const parentTipSha = (active,i) => (i === 0 ? state.main : active[i - 1].commits).at(-1).sha;
+  function staleInfo(active,i) {
+    const parentCommits = i === 0 ? state.main : active[i - 1].commits;
+    const parentName = i === 0 ? 'main' : active[i - 1].name;
+    const at = parentCommits.findIndex(commit => commit.sha === active[i].baseSha);
+    if (at === parentCommits.length - 1) return null;
+    return {text: at < 0 ? 'base replaced; rebase onto ' + parentName : (parentCommits.length - 1 - at) + ' new commit(s) on ' + parentName + '; rebase needed'};
+  }
+  const staleText = (active,branch) => { const info = staleInfo(active,active.indexOf(branch)); return info ? ' \u00b7 \u26a0 ' + escapeHtml(info.text) : ''; };
+  const needsRebase = () => { const active = activeBranches(); return active.some((_,i) => staleInfo(active,i)); };
+  function replay(start) {
+    const active = activeBranches(), replayed = [];
+    let cascade = false;
+    for (let i = start; i < active.length; i++) {
+      const branch = active[i];
+      branch.baseBranch = i === 0 ? 'main' : active[i - 1].name;
+      if (!cascade && !staleInfo(active,i)) continue;
+      branch.commits.forEach(commit => { commit.prev = commit.sha; commit.sha = newSha(); });
+      branch.baseSha = parentTipSha(active,i);
+      branch.rebaseCount++;
+      cascade = true;
+      replayed.push(branch.name);
+    }
+    return replayed;
   }
   function initStack(names) {
     if (state.branches.length) {
@@ -168,7 +212,6 @@
     state.branches.push(branch);
     state.head = name;
     state.selectedStep = Math.min(3,active.length + 1);
-    state.dirty = false;
     addLog('gh stack add ' + name, 'Created ' + name + ' on top of ' + branch.originalBase + ' and checked it out.');
     explain('<strong>New layer added.</strong> <code>' + escapeHtml(name) + '</code> is based on <strong>' + escapeHtml(branch.originalBase) + '</strong>. Its pull request will target this immediate parent, keeping its diff focused on this layer.');
     render();
@@ -178,8 +221,8 @@
     if (!active.length) {
       addLog('gh stack submit','There are no active branches to submit. Initialize a stack first.'); render(); return;
     }
-    if (state.dirty) {
-      addLog('gh stack submit','The bottom branch changed. Run gh stack rebase before submitting this demo stack.');
+    if (needsRebase()) {
+      addLog('gh stack submit','A branch no longer starts at its parent tip. Run gh stack rebase before submitting this demo stack.');
       explain('<strong>Rebase required first.</strong> The simulator is asking you to rebase dependent branches before submitting the updated stack.','warn','Run gh stack rebase, then submit again.');
       render(); return;
     }
@@ -221,33 +264,35 @@
     explain('<strong>Checked out ' + escapeHtml(name) + '.</strong> HEAD moved, but the stack order and PR base relationships stayed the same.');
     render();
   }
+  function addCommit(branch) {
+    const msg = followUps[commitSeq++ % followUps.length];
+    branch.commits.push({sha:newSha(),msg,prev:null});
+    state.head = branch.name;
+    addLog('git commit -m "' + msg + '"','[' + branch.name + ' ' + branch.commits.at(-1).sha + '] ' + msg);
+    if (needsRebase()) explain('<strong>' + escapeHtml(branch.name) + ' gained a commit.</strong> Branches above it still start at its old tip, shown with dashed links in the commit graph. Run <code>gh stack rebase --upstack</code> to replay them on the new tip.', 'warn', 'The stack needs a rebase.');
+    else explain('<strong>Commit added to ' + escapeHtml(branch.name) + '.</strong> No branch sits above it, so nothing needs to be replayed.');
+    render();
+  }
   function addBottomCommit() {
     const bottom = activeBranches()[0];
     if (!bottom) { addLog('git commit','There is no active stack branch to change.'); render(); return; }
-    bottom.commits++;
-    state.head = bottom.name;
-    state.dirty = true;
-    addLog('git commit','Added a commit to ' + bottom.name + ' and checked it out. Higher branches now need to be replayed on the updated parent.');
-    explain('<strong>The bottom branch changed.</strong> HEAD is now on <code>' + escapeHtml(bottom.name) + '</code>. Run <code>gh stack rebase --upstack</code> to replay this branch and every branch above it.', 'warn', 'The stack is marked as needing a rebase.');
-    render();
+    addCommit(bottom);
+  }
+  function commitOnHead() {
+    const branch = activeBranches().find(item => item.name === state.head);
+    if (!branch) { addLog('git commit','Check out a stack branch first; HEAD is on main.'); render(); return; }
+    addCommit(branch);
   }
   function rebaseStack(upstack=false) {
     const active = activeBranches();
     if (!active.length) { addLog('gh stack rebase','There is no active stack to rebase.'); render(); return; }
     const current = currentIndex();
     const start = upstack && current >= 0 ? current : 0;
-    let previous = start > 0 ? active[start - 1] : null;
-    for (let i = start; i < active.length; i++) {
-      const branch = active[i];
-      const nextBase = previous ? previous.name : 'main';
-      if (branch.baseBranch !== nextBase || state.dirty || i >= start) branch.rebaseCount++;
-      branch.baseBranch = nextBase;
-      previous = branch;
-    }
-    state.dirty = false;
+    const replayed = replay(start);
     const command = upstack ? 'gh stack rebase --upstack' : 'gh stack rebase';
-    addLog(command, upstack ? 'Fetched from the remote and rebased from ' + active[start].name + ' through the top of the stack (simulated).' : 'Fetched from the remote and cascade-rebased the active stack (simulated).');
-    explain('<strong>Cascading rebase complete.</strong> The selected branch and the branches above it have been replayed in dependency order. Merged parents are skipped so the first remaining layer can be based on the next unmerged ancestor. In a real repository, a conflict may pause the rebase until you resolve it.','ok','The active stack is synchronized in this simulation.');
+    addLog(command, replayed.length ? 'Fetched from the remote and replayed ' + replayed.join(', ') + ' onto the updated parent history. Replayed commits got new SHAs (simulated).' : 'Fetched from the remote. Every branch already starts at its parent tip, so nothing was replayed (simulated).');
+    if (!replayed.length) { explain('<strong>Already up to date.</strong> Each branch starts at the tip of its parent, so no commits were replayed.'); render(); return; }
+    explain('<strong>Cascading rebase complete.</strong> The branches that were behind their parent, and every branch above them, were replayed in dependency order. Their commits have new SHAs (see the \u21bb marks in the graph). Merged parents are skipped so the first remaining layer is based on the next unmerged ancestor. In a real repository, a conflict may pause the rebase until you resolve it.','ok','The active stack is synchronized in this simulation.');
     render();
   }
   function mergeThrough(pr) {
@@ -257,18 +302,82 @@
     const mergedNow = [];
     for (let i = 0; i <= target; i++) {
       const branch = state.branches[i];
-      if (!branch.merged) { branch.merged = true; state.merged.push(branch.name); mergedNow.push('PR #' + branch.pr); }
+      if (!branch.merged) { branch.merged = true; state.merged.push(branch.name); mergedNow.push('PR #' + branch.pr); state.main.push({sha:newSha(),msg:branch.title + ' (#' + branch.pr + ')',prev:null,pr:branch.pr,color:branch.color}); }
     }
     const active = activeBranches();
     state.head = active.length ? active.at(-1).name : 'main';
-    state.dirty = false;
     addLog('gh stack merge ' + pr,'Merged ' + (mergedNow.length ? mergedNow.join(', ') : 'no additional PRs') + ' through PR #' + pr + '.');
-    explain('<strong>Stack merge simulated through PR #' + escapeHtml(pr) + '.</strong> Its unmerged dependencies below it were included. ' + (active.length ? 'Higher layers remain open. Their base is left unchanged here; run <code>gh stack rebase</code> or <code>gh stack sync</code> to rebase them over merged parents.' : 'All layers have landed; the stack is complete.'),'ok','The merge was simulated only. No pull requests or repository branches were changed.');
+    explain('<strong>Stack merge simulated through PR #' + escapeHtml(pr) + '.</strong> Its unmerged dependencies below it were included. ' + (active.length ? 'Higher layers remain open. Each merged PR landed on main as a new squash commit (simulated), so higher layers still build on the old commits, shown with dashed links in the graph. Run <code>gh stack rebase</code> or <code>gh stack sync</code> to replay them onto main.' : 'All layers have landed; the stack is complete.'),'ok','The merge was simulated only. No pull requests or repository branches were changed.');
     render();
+  }
+  function renderCommitGraph() {
+    const active = activeBranches();
+    const rowH = 50, laneW = 34, padL = 24, padT = 28, curve = 14;
+    const lx = lane => padL + lane * laneW;
+    const rows = [];
+    for (let i = active.length - 1; i >= 0; i--) {
+      const branch = active[i], list = branch.commits;
+      for (let j = list.length - 1; j >= 0; j--) rows.push({lane:i + 1,branch,commit:list[j],tip:j === list.length - 1});
+    }
+    for (let j = state.main.length - 1; j >= 0; j--) rows.push({lane:0,branch:null,commit:state.main[j],tip:j === state.main.length - 1});
+    const bySha = new Map();
+    rows.forEach((row,r) => { row.y = padT + r * rowH; bySha.set(row.commit.sha,row); });
+    const labelX = lx(active.length) + 28;
+    const H = padT * 2 + (rows.length - 1) * rowH;
+    let bands = '', lines = '', nodes = '', text = '', maxX = labelX + 340;
+    const mono = 'ui-monospace,SFMono-Regular,Consolas,monospace';
+    const mainRows = rows.filter(row => !row.branch);
+    if (mainRows.length > 1) lines += '<line x1="' + lx(0) + '" y1="' + mainRows[0].y + '" x2="' + lx(0) + '" y2="' + mainRows.at(-1).y + '" stroke="#8c959f" stroke-width="2.5"/>';
+    active.forEach((branch,i) => {
+      const own = rows.filter(row => row.branch === branch);
+      const x = lx(i + 1), oldest = own.at(-1);
+      if (own.length > 1) lines += '<line x1="' + x + '" y1="' + own[0].y + '" x2="' + x + '" y2="' + oldest.y + '" stroke="' + branch.color + '" stroke-width="2.5"/>';
+      const stale = staleInfo(active,i);
+      const target = bySha.get(branch.baseSha) || bySha.get(parentTipSha(active,i));
+      lines += '<path d="M' + x + ' ' + oldest.y + ' V' + (target.y - curve) + ' Q' + x + ' ' + target.y + ' ' + (x - curve) + ' ' + target.y + ' H' + lx(target.lane) + '" fill="none" stroke="' + (stale ? '#bf8700' : branch.color) + '" stroke-width="2.5"' + (stale ? ' stroke-dasharray="5 4"' : '') + '/>';
+    });
+    rows.forEach(row => {
+      const {commit, branch, y} = row, x = lx(row.lane);
+      const onHead = branch ? branch.name === state.head : state.head === 'main';
+      const fill = branch ? branch.color : (commit.pr ? commit.color : '#57606a');
+      if (branch && branch.name === state.head) bands += '<rect x="0" y="' + (y - rowH / 2) + '" width="100%" height="' + rowH + '" fill="' + branch.color + '" opacity=".08"/>';
+      if (row.tip && onHead) nodes += '<circle cx="' + x + '" cy="' + y + '" r="10" fill="none" stroke="#0969da" stroke-width="2"/>';
+      nodes += '<circle cx="' + x + '" cy="' + y + '" r="6" fill="' + fill + '" stroke="#fff" stroke-width="2"><title>' + escapeHtml(commit.sha + ' ' + commit.msg) + '</title></circle>';
+      text += '<text x="' + labelX + '" y="' + (y - 3) + '" font-size="12" font-weight="600" fill="#1f2328">' + escapeHtml(trunc(commit.msg,46)) + '</text>';
+      const ly = y + 13;
+      let cx = labelX;
+      text += '<text x="' + cx + '" y="' + ly + '" font-size="10" font-family="' + mono + '" fill="#656d76">' + commit.sha + '</text>';
+      cx += 54;
+      if (commit.prev) {
+        const note = '\u21bb was ' + commit.prev;
+        text += '<text x="' + cx + '" y="' + ly + '" font-size="10" font-family="' + mono + '" fill="#9a6700">' + note + '</text>';
+        cx += note.length * 6.1 + 8;
+      }
+      const pills = [];
+      const name = branch ? branch.name : 'main';
+      if (row.tip) pills.push(onHead ? ['HEAD \u2192 ' + name,'#0969da','#fff'] : [name,fill,'#fff']);
+      if (branch && row.tip && branch.pr) pills.push(['PR #' + branch.pr,'#dafbe1','#1a7f37','#82c99a']);
+      if (!branch && commit.pr) pills.push(['merged \u00b7 PR #' + commit.pr,'#dafbe1','#1a7f37','#82c99a']);
+      if (branch && row.tip && staleInfo(active,active.indexOf(branch))) pills.push(['\u26a0 rebase needed','#fff8c5','#9a6700','#d4a72c']);
+      pills.forEach(([label,bg,fg,stroke]) => {
+        const w = label.length * 6.2 + 12;
+        text += '<rect x="' + cx + '" y="' + (ly - 11) + '" width="' + w + '" height="15" rx="7.5" fill="' + bg + '" stroke="' + (stroke || bg) + '"/><text x="' + (cx + w / 2) + '" y="' + (ly - 0.5) + '" text-anchor="middle" font-size="10" font-weight="700" fill="' + fg + '">' + escapeHtml(label) + '</text>';
+        cx += w + 5;
+      });
+      maxX = Math.max(maxX,cx);
+    });
+    const W = Math.ceil(maxX + 12);
+    const svg = $('cg');
+    svg.setAttribute('viewBox','0 0 ' + W + ' ' + H);
+    svg.setAttribute('width',W);
+    svg.setAttribute('height',H);
+    svg.innerHTML = bands + lines + nodes + text;
+    $('cg-meta').textContent = active.reduce((sum,branch) => sum + branch.commits.length,0) + ' commit(s) on ' + active.length + ' active branch(es) \u00b7 ' + state.main.length + ' on main \u00b7 newest first';
   }
   function renderGraph() {
     const graph = $('graph');
     const reversed = state.branches.slice().reverse();
+    const act = activeBranches();
     let html = '';
     reversed.forEach((branch,reverseIndex) => {
       if (reverseIndex) html += '<div class="connector"><span>↓</span></div>';
@@ -277,13 +386,13 @@
       html += '<button type="button" class="branch ' + (selected ? 'selected ' : '') + (branch.merged ? 'merged' : '') + '" data-branch="' + escapeHtml(branch.name) + '" ' + (branch.merged ? 'disabled' : '') + '>' +
         '<div class="branchtop"><span class="branchname"><i class="branchdot" style="background:' + branch.color + '"></i>' + escapeHtml(branch.name) + '</span><span class="status">' + (selected ? '● HEAD' : status) + '</span></div>' +
         '<div class="branchmeta">' + escapeHtml(branch.title) + ' · base: ' + escapeHtml(baseFor(branch)) + '</div>' +
-        '<div class="branchmeta">' + branch.commits + ' commit(s) · ' + branch.files + ' changed files' + (branch.rebaseCount ? ' · ' + branch.rebaseCount + ' rebase(s)' : '') + '</div></button>';
+        '<div class="branchmeta">' + branch.commits.length + ' commit(s) · ' + branch.files + ' changed files' + (branch.rebaseCount ? ' · ' + branch.rebaseCount + ' rebase(s)' : '') + (branch.merged ? '' : staleText(act,branch)) + '</div></button>';
     });
     if (reversed.length) html += '<div class="connector"><span>↓</span></div>';
     html += '<div class="branch trunk"><div class="branchtop"><span class="branchname">◉ main</span><span class="status">TRUNK</span></div><div class="branchmeta">Base branch · starting point</div></div>';
     graph.innerHTML = html;
     const active = activeBranches();
-    $('stack-status').textContent = !state.branches.length ? 'NO ACTIVE STACK' : state.dirty ? 'REBASE NEEDED' : active.length ? (active.some(b => b.pr === null) ? 'LOCAL · CHANGES PENDING' : 'PUBLISHED · ' + active.length + ' OPEN') : 'STACK MERGED';
+    $('stack-status').textContent = !state.branches.length ? 'NO ACTIVE STACK' : needsRebase() ? 'REBASE NEEDED' : active.length ? (active.some(b => b.pr === null) ? 'LOCAL · CHANGES PENDING' : 'PUBLISHED · ' + active.length + ' OPEN') : 'STACK MERGED';
     $('head').innerHTML = 'HEAD → <strong>' + escapeHtml(state.head) + '</strong> ' + (state.head === 'main' ? '· trunk' : '· checked out');
     $('graph-hint').textContent = state.branches.length ? 'Select an active branch to check it out. Merged layers are retained in the graph for context.' : 'Run gh stack init feature-auth to create the first branch.';
     $('stat-branches').textContent = active.length;
@@ -296,10 +405,12 @@
     $('init').disabled = state.branches.length > 0;
     $('add-api').disabled = !active.length || active.length !== 1 || state.head !== active.at(-1).name || state.branches.some(b => b.name === 'feature-api');
     $('add-ui').disabled = active.length < 2 || active.length !== 2 || state.head !== active.at(-1).name || state.branches.some(b => b.name === 'feature-ui');
-    $('submit').disabled = !active.length || !active.some(b => b.pr === null) || state.dirty;
+    $('submit').disabled = !active.length || !active.some(b => b.pr === null) || needsRebase();
     $('add-commit').disabled = !active.length;
+    $('commit-head').disabled = !active.some(b => b.name === state.head);
     $('rebase').disabled = !active.length;
-    $('rebase-note').style.display = state.dirty ? 'block' : 'none';
+    $('rebase-note').style.display = needsRebase() ? 'block' : 'none';
+    renderCommitGraph();
     $('steps').querySelectorAll('.step').forEach((element,index) => element.classList.toggle('active',index === state.selectedStep));
 
     const openPrs = active.filter(branch => branch.pr !== null);
@@ -325,8 +436,9 @@
     const command = rawCommand.trim().replace(/\s+/g,' ');
     if (!command) return;
     const parts = command.split(' ');
+    if (parts[0] === 'git' && parts[1] === 'commit') { commitOnHead(); return; }
     if (parts[0] !== 'gh' || parts[1] !== 'stack') {
-      addLog(command,'This playground simulates gh stack commands. Try: gh stack view --short'); render(); return;
+      addLog(command,'This playground simulates gh stack commands and git commit. Try: gh stack view --short'); render(); return;
     }
     const subcommand = parts[2] || '';
     if (subcommand === 'init') {
@@ -365,19 +477,12 @@
     } else if (subcommand === 'sync') {
       const active = activeBranches();
       if (!active.length) { addLog(command,'There is no active stack to sync.'); render(); return; }
-      let previous = null;
-      active.forEach(branch => {
-        const nextBase = previous ? previous.name : 'main';
-        if (branch.baseBranch !== nextBase || state.dirty) branch.rebaseCount++;
-        branch.baseBranch = nextBase;
-        previous = branch;
-      });
-      state.dirty = false;
-      addLog(command,'Fetched and reconciled remote state, rebased when needed, pushed active branches, and refreshed PR/Stack state. No new PRs were created.');
+      const replayed = replay(0);
+      addLog(command,'Fetched and reconciled remote state, ' + (replayed.length ? 'replayed ' + replayed.join(', ') + ' with new SHAs' : 'found nothing to replay') + ', pushed active branches, and refreshed PR/Stack state. No new PRs were created.');
       explain('<strong>Stack synced.</strong> <code>gh stack sync</code> reconciles the local stack with GitHub, rebases when needed, pushes active branches, and refreshes PR state. It does not create PRs; use <code>gh stack submit</code> for that.','ok','The simulated stack is synchronized.');
       render();
     } else if (subcommand === 'help') {
-      addLog(command,'Available in this demo: init, add, submit, view, checkout, up, down, top, bottom, trunk, rebase, push, sync, merge.'); render();
+      addLog(command,'Available in this demo: init, add, submit, view, checkout, up, down, top, bottom, trunk, rebase, push, sync, merge, plus git commit.'); render();
     } else {
       addLog(command,'That command is not implemented in this learning simulation. Try gh stack help.'); render();
     }
@@ -398,7 +503,7 @@
     if (!button || !app.contains(button)) return;
     if (button.dataset.tab) { setTab(button.dataset.tab); return; }
     if (button.dataset.action === 'reset') {
-      state.branches = []; state.head = 'main'; state.nextPr = 1; state.merged = []; state.logs = []; state.operations = 0; state.dirty = false; state.selectedStep = 0;
+      state.branches = []; state.main = freshMain(); commitSeq = 0; state.head = 'main'; state.nextPr = 1; state.merged = []; state.logs = []; state.operations = 0; state.selectedStep = 0;
       explain('Start with <strong>main</strong>. Initialize the stack with <code>gh stack init feature-auth</code>. This creates the bottom branch on top of trunk.');
       render(); return;
     }
@@ -407,6 +512,7 @@
     if (button.id === 'add-ui') { addBranch('feature-ui'); return; }
     if (button.id === 'submit') { submitStack(); return; }
     if (button.id === 'add-commit') { addBottomCommit(); return; }
+    if (button.id === 'commit-head') { commitOnHead(); return; }
     if (button.id === 'rebase') { rebaseStack(true); return; }
     if (button.id === 'merge') { mergeThrough($('merge-select').value); return; }
     if (button.dataset.nav) { move(button.dataset.nav); return; }
